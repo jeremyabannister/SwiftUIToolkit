@@ -6,6 +6,8 @@ let package = Package(
     name: "SwiftUIToolkit",
     platforms: [.macOS(.v10_15), .iOS(.v13), .watchOS(.v6), .tvOS(.v13)],
     products: [
+        
+        ///
         .library(
             name: "SwiftUIToolkit",
             targets: ["SwiftUIToolkit"]
@@ -13,11 +15,16 @@ let package = Package(
     ],
     dependencies: [
         
+        ///
+        .package(
+            url: "https://github.com/jeremyabannister/FoundationToolkit",
+            from: "0.1.5"
+        )
     ],
     targets: [
         .target(
             name: "SwiftUIToolkit",
-            dependencies: []
+            dependencies: ["FoundationToolkit"]
         ),
         .testTarget(
             name: "SwiftUIToolkit-tests",
