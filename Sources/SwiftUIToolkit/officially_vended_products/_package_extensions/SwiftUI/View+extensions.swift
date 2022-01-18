@@ -9,6 +9,15 @@
 public extension View {
     
     ///
+    func asAnyView () -> AnyView {
+        AnyView(self)
+    }
+}
+
+///
+public extension View {
+    
+    ///
     func nullify (if predicate: (Self)->Bool) -> Self? {
         nullify(if: predicate(self))
     }
