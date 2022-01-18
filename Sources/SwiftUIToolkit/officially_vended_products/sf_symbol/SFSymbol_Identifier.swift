@@ -28,12 +28,12 @@ public extension SFSymbol {
 public extension SFSymbol.Identifier {
     
     ///
-    public static var checkmark: Self {
+    static var checkmark: Self {
         "checkmark"
     }
     
     ///
-    public static var xmark: Self {
+    static var xmark: Self {
         "xmark"
     }
 }
