@@ -8,3 +8,4 @@
 ///
 @_exported import SwiftUI
 @_exported import FoundationToolkit
+@_exported import EagerOrLazy

@@ -19,12 +19,25 @@ let package = Package(
         .package(
             url: "https://github.com/jeremyabannister/FoundationToolkit",
             from: "0.1.5"
-        )
+        ),
+        
+        ///
+        .package(
+            url: "https://github.com/jeremyabannister/EagerOrLazy",
+            from: "0.1.0"
+        ),
     ],
     targets: [
         .target(
             name: "SwiftUIToolkit",
-            dependencies: ["FoundationToolkit"]
+            dependencies: [
+                
+                ///
+                "FoundationToolkit",
+                
+                ///
+                "EagerOrLazy"
+            ]
         ),
         .testTarget(
             name: "SwiftUIToolkit-tests",

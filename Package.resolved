@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "EagerOrLazy",
+        "repositoryURL": "https://github.com/jeremyabannister/EagerOrLazy",
+        "state": {
+          "branch": null,
+          "revision": "ad7dfa8bd290f2cafaba3b12967b264fc69fd1df",
+          "version": "0.1.0"
+        }
+      },
+      {
         "package": "ErrorMessage",
         "repositoryURL": "https://github.com/jeremyabannister/ErrorMessage",
         "state": {
