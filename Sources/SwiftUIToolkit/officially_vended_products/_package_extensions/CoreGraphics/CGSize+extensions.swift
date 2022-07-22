@@ -7,3 +7,12 @@
 
 ///
 extension CGSize: ExpressionErgonomic { }
+
+///
+public extension CGSize {
+    
+    ///
+    static func square (_ sideLength: CGFloat) -> Self {
+        .init(width: sideLength, height: sideLength)
+    }
+}
