@@ -7,3 +7,12 @@
 
 ///
 extension CGFloat: ExpressionErgonomic { }
+
+///
+public extension CGFloat {
+    
+    ///
+    func divided (by dividend: CGFloat) -> Self {
+        self / dividend
+    }
+}
