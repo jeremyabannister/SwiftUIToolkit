@@ -20,3 +20,59 @@ public extension Color {
         )
     }
 }
+
+///
+@available(iOS 15.0, *)
+extension Color: Codable {
+    
+    ///
+    public func encode (to encoder: Encoder) throws {
+        
+        ///
+        var container = encoder.singleValueContainer()
+        
+        ///
+        try container
+            .encode(
+                try NSKeyedArchiver.archivedData(
+                    withRootObject: PlatformColor(self),
+                    requiringSecureCoding: true
+                )
+            )
+    }
+    
+    ///
+    public init (from decoder: Decoder) throws {
+        
+        ///
+        let data = try decoder.singleValueContainer().decode(Data.self)
+        
+        ///
+        guard let platformColor =
+            try NSKeyedUnarchiver
+                .unarchiveTopLevelObjectWithData(data)
+                as? PlatformColor
+        else { throw "wrongType".asErrorMessage() }
+        
+        ///
+        self = Color(platformColor: platformColor)
+    }
+}
+
+#if os(iOS)
+fileprivate typealias PlatformColor = UIColor
+@available(iOS 15, *)
+fileprivate extension Color {
+    init(platformColor: PlatformColor) {
+        self.init(uiColor: platformColor)
+    }
+}
+#elseif os(macOS)
+fileprivate typealias PlatformColor = NSColor
+@available(macOS 11, *)
+fileprivate extension Color {
+    init(platformColor: PlatformColor) {
+        self.init(nsColor: platformColor)
+    }
+}
+#endif
