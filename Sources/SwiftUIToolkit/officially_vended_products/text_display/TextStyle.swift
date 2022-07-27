@@ -12,11 +12,11 @@ public struct TextStyle: ProperValueType {
     public var font: FontDescription
     
     ///
-    public var color: Color
+    public var color: Color?
     
     ///
     public init (font: FontDescription,
-                 color: Color = Self.defaultColor) {
+                 color: Color? = nil) {
         
         self.font = font
         self.color = color
@@ -28,7 +28,7 @@ public extension TextStyle {
     
     ///
     static func roundedBold (size: CGFloat,
-                             color: Color = Self.defaultColor) -> Self {
+                             color: Color? = nil) -> Self {
         
         .bold(
             size: size,
@@ -45,7 +45,7 @@ public extension TextStyle {
     static func rounded (family: Font.Family = .system,
                          size: CGFloat,
                          weight: Font.Weight = .regular,
-                         color: Color = Self.defaultColor)
+                         color: Color? = nil)
         -> Self {
         
         .init(
@@ -64,7 +64,7 @@ public extension TextStyle {
     static func bold (family: Font.Family = .system,
                       size: CGFloat,
                       design: Font.Design = .default,
-                      color: Color = Self.defaultColor)
+                      color: Color? = nil)
         -> Self {
         
         .init(
@@ -87,7 +87,7 @@ public extension TextStyle {
     static func systemFont (size: CGFloat,
                             weight: Font.Weight = .regular,
                             design: Font.Design = .default,
-                            color: Color = Self.defaultColor)
+                            color: Color? = nil)
         -> Self {
         
         .init(
