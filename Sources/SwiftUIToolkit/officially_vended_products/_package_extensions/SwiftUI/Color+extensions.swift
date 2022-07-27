@@ -22,7 +22,7 @@ public extension Color {
 }
 
 ///
-@available(iOS 15.0, *)
+@available(macOS 12, iOS 15.0, *)
 extension Color: Codable {
     
     ///
@@ -69,7 +69,7 @@ fileprivate extension Color {
 }
 #elseif os(macOS)
 fileprivate typealias PlatformColor = NSColor
-@available(macOS 11, *)
+@available(macOS 12, *)
 fileprivate extension Color {
     init(platformColor: PlatformColor) {
         self.init(nsColor: platformColor)
