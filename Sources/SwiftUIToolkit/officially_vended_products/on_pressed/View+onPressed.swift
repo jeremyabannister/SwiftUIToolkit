@@ -9,22 +9,62 @@
 public extension View {
     
     ///
-    func onPressed (_ onPressed: @escaping ()->()) -> some View {
-        Button(action: onPressed, label: { self })
-            .buttonStyle(CustomButtonStyle())
+    func onPressed
+        <ModifiedView: View>
+        (perform action: @escaping ()->(),
+         modifyBaseView: @escaping (Self, Bool)->ModifiedView)
+    -> some View {
+        Button(action: action, label: { self })
+            .buttonStyle(
+                CustomButtonStyle(
+                    baseView: self,
+                    modifyBaseView: modifyBaseView
+                )
+            )
     }
 }
 
 ///
-fileprivate struct CustomButtonStyle: ButtonStyle {
+public extension View {
     
     ///
-    func makeBody (configuration: Configuration) -> some View {
-        configuration
-            .label
-            .opacity(configuration.isPressed ? 0.75 : 1)
-            .contentShape(Rectangle())
+    func onPressed (_ onPressed: @escaping ()->()) -> some View {
+        Button(action: onPressed, label: { self })
+            .buttonStyle(
+                CustomButtonStyle(
+                    baseView: self,
+                    modifyBaseView: { baseView, isPressed in
+                        baseView
+                            .opacity(isPressed ? 0.75 : 1.0)
+                    }
+                )
+            )
     }
 }
 
-// Test commit
+///
+fileprivate struct CustomButtonStyle
+    <BaseView: View,
+     Button: View>:
+        ButtonStyle {
+    
+    ///
+    var baseView: BaseView
+    
+    ///
+    var modifyBaseView: (BaseView, Bool)->Button
+}
+
+///
+extension CustomButtonStyle {
+    
+    ///
+    @ViewBuilder
+    func makeBody (configuration: Configuration) -> some View {
+        modifyBaseView(
+            baseView,
+            configuration.isPressed
+        )
+        .contentShape(Rectangle())
+    }
+}
