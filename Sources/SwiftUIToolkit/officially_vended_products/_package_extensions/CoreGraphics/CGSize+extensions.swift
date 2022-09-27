@@ -16,3 +16,12 @@ public extension CGSize {
         .init(width: sideLength, height: sideLength)
     }
 }
+
+///
+public extension CGSize {
+    
+    ///
+    var aspectRatio: CGFloat {
+        width/height
+    }
+}
