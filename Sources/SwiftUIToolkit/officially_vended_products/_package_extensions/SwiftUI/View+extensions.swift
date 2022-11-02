@@ -9,6 +9,78 @@
 public extension View {
     
     ///
+    func leadStack
+        (alignment: VerticalAlignment = .center,
+         spacing: CGFloat? = nil,
+         @ViewBuilder _ viewBuilder: ()->some View)
+    -> some View {
+            
+            HStack(
+                alignment: alignment,
+                spacing: spacing,
+                content: {
+                    viewBuilder()
+                    self
+                }
+            )
+    }
+    
+    ///
+    func trailStack
+        (alignment: VerticalAlignment = .center,
+         spacing: CGFloat? = nil,
+         @ViewBuilder _ viewBuilder: ()->some View)
+    -> some View {
+            
+        HStack(
+            alignment: alignment,
+            spacing: spacing,
+            content: {
+                self
+                viewBuilder()
+            }
+        )
+    }
+    
+    ///
+    func topStack
+        (alignment: HorizontalAlignment = .center,
+         spacing: CGFloat? = nil,
+         @ViewBuilder _ viewBuilder: ()->some View)
+    -> some View {
+            
+            VStack(
+                alignment: alignment,
+                spacing: spacing,
+                content: {
+                    viewBuilder()
+                    self
+                }
+            )
+    }
+    
+    ///
+    func bottomStack
+        (alignment: HorizontalAlignment = .center,
+         spacing: CGFloat? = nil,
+         @ViewBuilder _ viewBuilder: ()->some View)
+    -> some View {
+            
+        VStack(
+            alignment: alignment,
+            spacing: spacing,
+            content: {
+                self
+                viewBuilder()
+            }
+        )
+    }
+}
+
+///
+public extension View {
+    
+    ///
     func asAnyView () -> AnyView {
         AnyView(self)
     }
