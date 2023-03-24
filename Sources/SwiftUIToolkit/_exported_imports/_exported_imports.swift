@@ -6,6 +6,6 @@
 //
 
 ///
-@_exported import SwiftUI
+@_exported import EagerOrLazy_module
 @_exported import FoundationToolkit
-@_exported import EagerOrLazy
+@_exported import SwiftUI
