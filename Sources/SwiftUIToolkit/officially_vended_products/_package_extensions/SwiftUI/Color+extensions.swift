@@ -50,8 +50,10 @@ extension Color: Codable {
         ///
         guard let platformColor =
             try NSKeyedUnarchiver
-                .unarchiveTopLevelObjectWithData(data)
-                as? PlatformColor
+                .unarchivedObject(
+                    ofClass: PlatformColor.self,
+                    from: data
+                )
         else { throw "wrongType".asErrorMessage() }
         
         ///
