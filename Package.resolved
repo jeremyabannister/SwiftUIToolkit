@@ -86,8 +86,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/jeremyabannister/FoundationToolkit",
       "state" : {
-        "revision" : "6b5f2bbbe9ee5ef2de544ff96b64176bbf30f9bb",
-        "version" : "0.5.0"
+        "revision" : "f059a74b6365b306b0c46e16eec761e7fb4bf532",
+        "version" : "0.6.0"
       }
     },
     {
@@ -141,6 +141,15 @@
       "location" : "https://github.com/jeremyabannister/RetroactiveConformance-Dictionary-Error",
       "state" : {
         "revision" : "fcc514c988bc6bae5dedb57563d2715d830af598",
+        "version" : "0.1.0"
+      }
+    },
+    {
+      "identity" : "sequence-asarray",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jeremyabannister/Sequence-asArray",
+      "state" : {
+        "revision" : "c1da5ef00a6a057f0376410517dcf82f16fc0b6e",
         "version" : "0.1.0"
       }
     },
