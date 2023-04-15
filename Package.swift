@@ -1,4 +1,4 @@
-// swift-tools-version:5.7
+// swift-tools-version:5.8
 
 ///
 import PackageDescription
@@ -28,17 +28,20 @@ let package = Package(
             url: "https://github.com/jeremyabannister/EagerOrLazy-module",
             from: "0.1.0"
         ),
+        
+        ///
+        .package(
+            url: "https://github.com/jeremyabannister/View-bubblify",
+            from: "0.1.0"
+        ),
     ],
     targets: [
         .target(
             name: "SwiftUIToolkit",
             dependencies: [
-                
-                ///
                 "FoundationToolkit",
-                
-                ///
                 "EagerOrLazy-module",
+                "View-bubblify",
             ]
         ),
         .testTarget(

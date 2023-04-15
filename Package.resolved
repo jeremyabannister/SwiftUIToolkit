@@ -190,6 +190,15 @@
       }
     },
     {
+      "identity" : "view-bubblify",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jeremyabannister/View-bubblify",
+      "state" : {
+        "revision" : "8359b4d4b9e242a5364444245ad62059659523bb",
+        "version" : "0.1.0"
+      }
+    },
+    {
       "identity" : "xctesttoolkit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/jeremyabannister/XCTestToolkit",
