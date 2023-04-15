@@ -26,13 +26,13 @@ let package = Package(
         ///
         .package(
             url: "https://github.com/jeremyabannister/EagerOrLazy-module",
-            from: "0.1.0"
+            "0.1.0" ..< "0.2.0"
         ),
         
         ///
         .package(
             url: "https://github.com/jeremyabannister/View-bubblify",
-            from: "0.1.0"
+            "0.1.1" ..< "0.2.0"
         ),
     ],
     targets: [
