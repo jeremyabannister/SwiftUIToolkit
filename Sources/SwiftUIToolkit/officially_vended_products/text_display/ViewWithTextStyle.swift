@@ -9,7 +9,10 @@
 public protocol ViewWithTextStyle: View {
     
     ///
-    func textStyle (_ textStyle: TextStyle) -> Self
+    func textStyle (_ textStyle: TextStyle) -> TextStyledSelf
+    
+    ///
+    associatedtype TextStyledSelf: View
 }
 
 ///
