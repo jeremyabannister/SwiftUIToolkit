@@ -1,12 +1,12 @@
 //
-//  Text+ViewWithTextStyle.swift
+//  Text+TextStyleableView.swift
 //  
 //
 //  Created by Jeremy Bannister on 12/27/21.
 //
 
 ///
-extension Text: ViewWithTextStyle {
+extension Text: TextStyleableView {
     
     ///
     public func textStyle (_ textStyle: TextStyle) -> Self {

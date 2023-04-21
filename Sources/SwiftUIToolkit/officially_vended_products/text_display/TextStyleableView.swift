@@ -1,12 +1,12 @@
 //
-//  ViewWithTextStyle.swift
+//  TextStyleableView.swift
 //  
 //
 //  Created by Jeremy Bannister on 12/27/21.
 //
 
 ///
-public protocol ViewWithTextStyle: View {
+public protocol TextStyleableView: View {
     
     ///
     func textStyle (_ textStyle: TextStyle) -> TextStyledSelf
@@ -16,7 +16,7 @@ public protocol ViewWithTextStyle: View {
 }
 
 ///
-public extension ViewWithTextStyle {
+public extension TextStyleableView {
     
     ///
     func multilineTextStyle (_ textStyle: MultilineTextStyle) -> some View {
