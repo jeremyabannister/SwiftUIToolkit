@@ -19,14 +19,20 @@ let package = Package(
         
         ///
         .package(
-            url: "https://github.com/jeremyabannister/FoundationToolkit",
-            "0.6.0" ..< "0.7.0"
+            url: "https://github.com/jeremyabannister/Color-from-hex",
+            "0.1.0" ..< "0.2.0"
         ),
         
         ///
         .package(
             url: "https://github.com/jeremyabannister/EagerOrLazy-module",
             "0.1.0" ..< "0.2.0"
+        ),
+        
+        ///
+        .package(
+            url: "https://github.com/jeremyabannister/FoundationToolkit",
+            "0.6.0" ..< "0.7.0"
         ),
         
         ///
@@ -39,8 +45,9 @@ let package = Package(
         .target(
             name: "SwiftUIToolkit",
             dependencies: [
-                "FoundationToolkit",
+                "Color-from-hex",
                 "EagerOrLazy-module",
+                "FoundationToolkit",
                 "View-bubblify",
             ]
         ),

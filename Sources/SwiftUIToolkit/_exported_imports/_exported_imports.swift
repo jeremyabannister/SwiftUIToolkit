@@ -6,6 +6,7 @@
 //
 
 ///
+@_exported import Color_from_hex
 @_exported import EagerOrLazy_module
 @_exported import FoundationToolkit
 @_exported import SwiftUI

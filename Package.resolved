@@ -19,6 +19,15 @@
       }
     },
     {
+      "identity" : "color-from-hex",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jeremyabannister/Color-from-hex",
+      "state" : {
+        "revision" : "37974491599de7a66eaf43197b1f3f8fad076700",
+        "version" : "0.1.0"
+      }
+    },
+    {
       "identity" : "data-humanreadabledescription",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/jeremyabannister/Data-humanReadableDescription",
@@ -88,6 +97,15 @@
       "state" : {
         "revision" : "f059a74b6365b306b0c46e16eec761e7fb4bf532",
         "version" : "0.6.0"
+      }
+    },
+    {
+      "identity" : "hexadecimalcolorcode-module",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jeremyabannister/HexadecimalColorCode-module",
+      "state" : {
+        "revision" : "923afd3b74a1b47f7cc2912f0d9fdef8ebbd9c92",
+        "version" : "0.1.0"
       }
     },
     {
@@ -194,8 +212,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/jeremyabannister/View-bubblify",
       "state" : {
-        "revision" : "8359b4d4b9e242a5364444245ad62059659523bb",
-        "version" : "0.1.0"
+        "revision" : "820181b2dd72c5f27243e5e5543e8d57b90d5146",
+        "version" : "0.1.1"
       }
     },
     {
