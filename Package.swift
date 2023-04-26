@@ -20,7 +20,7 @@ let package = Package(
         ///
         .package(
             url: "https://github.com/jeremyabannister/Color-from-hex",
-            "0.1.0" ..< "0.2.0"
+            "0.1.1" ..< "0.2.0"
         ),
         
         ///
@@ -38,7 +38,7 @@ let package = Package(
         ///
         .package(
             url: "https://github.com/jeremyabannister/View-bubblify",
-            "0.1.1" ..< "0.2.0"
+            "0.1.2" ..< "0.2.0"
         ),
     ],
     targets: [
