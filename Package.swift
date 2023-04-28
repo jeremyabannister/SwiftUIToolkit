@@ -37,6 +37,12 @@ let package = Package(
         
         ///
         .package(
+            url: "https://github.com/jeremyabannister/ScrollIfNecessary-module",
+            "0.1.0" ..< "0.2.0"
+        ),
+        
+        ///
+        .package(
             url: "https://github.com/jeremyabannister/View-bubblify",
             "0.1.2" ..< "0.2.0"
         ),
@@ -48,6 +54,7 @@ let package = Package(
                 "Color-from-hex",
                 "EagerOrLazy-module",
                 "FoundationToolkit",
+                "ScrollIfNecessary-module",
                 "View-bubblify",
             ]
         ),

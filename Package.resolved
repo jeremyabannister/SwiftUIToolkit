@@ -23,8 +23,17 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/jeremyabannister/Color-from-hex",
       "state" : {
-        "revision" : "37974491599de7a66eaf43197b1f3f8fad076700",
-        "version" : "0.1.0"
+        "revision" : "99e94cf0e78ad896c01b9c31352544224fab8827",
+        "version" : "0.1.1"
+      }
+    },
+    {
+      "identity" : "colorcode-rgba-256-module",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jeremyabannister/ColorCode-RGBA-256-module",
+      "state" : {
+        "revision" : "88fd5d49f96834895a98d1f0f5d6e6586303d1c8",
+        "version" : "0.1.3"
       }
     },
     {
@@ -100,15 +109,6 @@
       }
     },
     {
-      "identity" : "hexadecimalcolorcode-module",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/jeremyabannister/HexadecimalColorCode-module",
-      "state" : {
-        "revision" : "923afd3b74a1b47f7cc2912f0d9fdef8ebbd9c92",
-        "version" : "0.1.0"
-      }
-    },
-    {
       "identity" : "jsontoolkit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/jeremyabannister/JSONToolkit",
@@ -163,11 +163,29 @@
       }
     },
     {
+      "identity" : "scrollifnecessary-module",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jeremyabannister/ScrollIfNecessary-module",
+      "state" : {
+        "revision" : "2911bfe5878a4c02aa6f052d0570a1c1ec5f9daf",
+        "version" : "0.1.0"
+      }
+    },
+    {
       "identity" : "sequence-asarray",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/jeremyabannister/Sequence-asArray",
       "state" : {
         "revision" : "c1da5ef00a6a057f0376410517dcf82f16fc0b6e",
+        "version" : "0.1.0"
+      }
+    },
+    {
+      "identity" : "standardhexadecimalcolorcode-module",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jeremyabannister/StandardHexadecimalColorCode-module",
+      "state" : {
+        "revision" : "5d224537328e08954cf9d0493f9798723e2ba8a3",
         "version" : "0.1.0"
       }
     },
@@ -212,8 +230,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/jeremyabannister/View-bubblify",
       "state" : {
-        "revision" : "820181b2dd72c5f27243e5e5543e8d57b90d5146",
-        "version" : "0.1.1"
+        "revision" : "e09aa4481d66eada796771b98ed820d591e2f4e7",
+        "version" : "0.1.2"
       }
     },
     {
