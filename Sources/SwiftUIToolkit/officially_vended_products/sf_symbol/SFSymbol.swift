@@ -13,14 +13,30 @@ public struct SFSymbol: View {
     public var identifier: Identifier
     
     ///
+    private var shouldIgnoreOriginalAspectRatio: Bool = false
+    
+    ///
     public init (_ identifier: Identifier) {
         self.identifier = identifier
     }
     
     ///
     public var body: some View {
-        Image(systemName: identifier.string)
-            .resizable()
+        if shouldIgnoreOriginalAspectRatio {
+            Image(systemName: identifier.string)
+                .resizable()
+        } else {
+            Image(systemName: identifier.string)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+        }
+    }
+    
+    ///
+    public func ignoreOriginalAspectRatio () -> Self {
+        var copy = self
+        copy.shouldIgnoreOriginalAspectRatio = true
+        return copy
     }
 }
 
