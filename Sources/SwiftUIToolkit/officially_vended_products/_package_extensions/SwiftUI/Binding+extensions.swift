@@ -9,17 +9,39 @@
 extension Binding: ExpressionErgonomic { }
 
 ///
-public extension Binding {
+extension Binding {
     
     ///
-    func unwrap <Wrapped> () -> Binding<Wrapped>? where Value == Optional<Wrapped> {
-        self
-            .nullify(if: wrappedValue.isNil)?
-            .forceUnwrap()
+    public func unwrap
+        <Wrapped>
+        ()
+    -> Binding<Wrapped>?
+    where Value == Optional<Wrapped> {
+        
+        ///
+        if let value = self.wrappedValue {
+            return
+                Binding<Wrapped>(
+                    get: { value },
+                    set: { newValue in
+                        if self.wrappedValue.isNotNil {
+                            self.wrappedValue = .some(newValue)
+                        }
+                    }
+                )
+        } else {
+            return nil
+        }
     }
     
     ///
-    func forceUnwrap <Wrapped> () -> Binding<Wrapped> where Value == Optional<Wrapped> {
+    public func forceUnwrap
+        <Wrapped>
+        ()
+    -> Binding<Wrapped>
+    where Value == Optional<Wrapped> {
+        
+        ///
         self.map(
             forward: { $0! },
             reverse: { $0 }
@@ -28,13 +50,16 @@ public extension Binding {
 }
 
 ///
-public extension Binding {
+extension Binding {
     
     ///
-    func map <NewValue> (forward forwardTransform: @escaping (Value)->NewValue,
-                         reverse reverseTransform: @escaping (NewValue)->Value)
-        -> Binding<NewValue> {
+    public func map
+        <NewValue>
+        (forward forwardTransform: @escaping (Value)->NewValue,
+         reverse reverseTransform: @escaping (NewValue)->Value)
+    -> Binding<NewValue> {
         
+        ///
         Binding<NewValue>(
             get: { forwardTransform(self.wrappedValue) },
             set: { self.wrappedValue = reverseTransform($0) }
