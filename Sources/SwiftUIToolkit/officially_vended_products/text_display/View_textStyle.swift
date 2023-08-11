@@ -1,12 +1,12 @@
 //
-//  TextField+TextStyleableView.swift
+//  View_textStyle.swift
 //  
 //
-//  Created by Jeremy Bannister on 4/21/23.
+//  Created by Jeremy Bannister on 8/11/23.
 //
 
 ///
-extension TextField: TextStyleableView {
+extension View {
     
     ///
     public func textStyle (_ textStyle: TextStyle) -> some View {

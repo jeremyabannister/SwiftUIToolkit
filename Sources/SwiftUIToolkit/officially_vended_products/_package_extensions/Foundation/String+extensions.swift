@@ -9,7 +9,7 @@
 public extension String {
     
     ///
-    func displayed (_ textStyle: TextStyle) -> Text {
+    func displayed (_ textStyle: TextStyle) -> some View {
         Text(self).textStyle(textStyle)
     }
 }
