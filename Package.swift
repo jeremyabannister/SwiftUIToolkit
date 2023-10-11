@@ -44,7 +44,7 @@ let package = Package(
         ///
         .package(
             url: "https://github.com/jeremyabannister/View-bubblify",
-            "0.1.2" ..< "0.2.0"
+            "0.1.3" ..< "0.2.0"
         ),
     ],
     targets: [
