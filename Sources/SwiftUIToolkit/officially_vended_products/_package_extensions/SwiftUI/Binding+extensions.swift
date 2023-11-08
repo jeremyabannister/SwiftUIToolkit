@@ -12,6 +12,33 @@ extension Binding: ExpressionErgonomic { }
 extension Binding {
     
     ///
+    public func unwrapped
+        <Wrapped>
+        ()
+    -> Binding<Wrapped>?
+    where Value == Wrapped? {
+        
+        ///
+        guard let initialValue = self.wrappedValue else { return nil }
+        
+        ///
+        return
+            Binding<Wrapped>(
+                get: { self.wrappedValue ?? initialValue },
+                set: { newValue in
+                    if self.wrappedValue.isNotNil {
+                        self.wrappedValue = newValue
+                    }
+                }
+            )
+    }
+}
+
+///
+extension Binding {
+    
+    ///
+    @available(*, deprecated, message: "This method has been renamed to .unwrapped().")
     public func unwrap
         <Wrapped>
         ()
@@ -22,7 +49,7 @@ extension Binding {
         if let value = self.wrappedValue {
             return
                 Binding<Wrapped>(
-                    get: { value },
+                    get: { self.wrappedValue ?? value },
                     set: { newValue in
                         if self.wrappedValue.isNotNil {
                             self.wrappedValue = .some(newValue)
