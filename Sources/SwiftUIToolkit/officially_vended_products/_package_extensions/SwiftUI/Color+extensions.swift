@@ -61,7 +61,7 @@ extension Color: Codable {
     }
 }
 
-#if os(iOS)
+#if os(iOS) || os(watchOS)
 fileprivate typealias PlatformColor = UIColor
 @available(iOS 15, *)
 fileprivate extension Color {
