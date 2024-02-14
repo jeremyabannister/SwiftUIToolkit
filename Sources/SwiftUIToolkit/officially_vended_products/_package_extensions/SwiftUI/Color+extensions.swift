@@ -22,7 +22,7 @@ public extension Color {
 }
 
 ///
-@available(macOS 12, iOS 15.0, watchOS 8, *)
+@available(macOS 12, iOS 15.0, watchOS 8, tvOS 15, *)
 extension Color: Codable {
     
     ///
@@ -61,9 +61,9 @@ extension Color: Codable {
     }
 }
 
-#if os(iOS) || os(watchOS)
+#if os(iOS) || os(watchOS) || os(tvOS)
 fileprivate typealias PlatformColor = UIColor
-@available(iOS 15, watchOS 8, *)
+@available(iOS 15, watchOS 8, tvOS 15, *)
 fileprivate extension Color {
     init(platformColor: PlatformColor) {
         self.init(uiColor: platformColor)

@@ -8,7 +8,7 @@
 // MARK: - Post-macOS11-iOS14
 
 ///
-@available(iOS 14.0, macOS 11.0, *)
+@available(iOS 14.0, macOS 11.0, tvOS 14, *)
 public extension ValueDisplayFunction where Value: RandomAccessCollection & DisplayableValue,
                                             Value.Element: Identifiable {
     
@@ -37,7 +37,7 @@ public extension ValueDisplayFunction where Value: RandomAccessCollection & Disp
 }
 
 ///
-@available(iOS 14.0, macOS 11.0, *)
+@available(iOS 14.0, macOS 11.0, tvOS 14, *)
 public extension ValueDisplayFunction where Value: RandomAccessCollection & DisplayableValue {
     
     ///
@@ -67,7 +67,7 @@ public extension ValueDisplayFunction where Value: RandomAccessCollection & Disp
 }
 
 ///
-@available(iOS 14.0, macOS 11.0, *)
+@available(iOS 14.0, macOS 11.0, tvOS 14, *)
 public extension ValueDisplayFunction where Value: RandomAccessCollection & DisplayableValue,
                                             Value.Element: Identifiable {
     
@@ -133,7 +133,7 @@ public extension ValueDisplayFunction where Value: RandomAccessCollection & Disp
 }
 
 ///
-@available(iOS 14.0, macOS 11.0, *)
+@available(iOS 14.0, macOS 11.0, tvOS 14, *)
 public extension ValueDisplayFunction where Value: RandomAccessCollection & DisplayableValue,
                                             Value.Element: Identifiable {
     
@@ -207,7 +207,7 @@ public extension ValueDisplayFunction where Value: RandomAccessCollection & Disp
 }
 
 ///
-@available(iOS 14.0, macOS 11.0, *)
+@available(iOS 14.0, macOS 11.0, tvOS 14, *)
 public extension ValueDisplayFunction where Value: RandomAccessCollection & DisplayableValue {
     
     ///
@@ -284,7 +284,7 @@ public extension ValueDisplayFunction where Value: RandomAccessCollection & Disp
 }
 
 ///
-@available(iOS 14.0, macOS 11.0, *)
+@available(iOS 14.0, macOS 11.0, tvOS 14, *)
 public extension ValueDisplayFunction where Value: RandomAccessCollection & DisplayableValue {
     
     ///
