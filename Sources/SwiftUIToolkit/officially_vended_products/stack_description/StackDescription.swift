@@ -25,7 +25,7 @@ public enum StackDescription: Equatable,
 }
 
 ///
-@available(iOS 14.0, macOS 11.0, *)
+@available(macOS 11.0, iOS 14.0, watchOS 7, *)
 public extension StackDescription {
     
     ///
