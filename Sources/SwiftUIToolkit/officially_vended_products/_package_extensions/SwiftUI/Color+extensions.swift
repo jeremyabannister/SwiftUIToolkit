@@ -6,13 +6,16 @@
 //
 
 ///
-public extension Color {
+extension Color {
     
     ///
-    init (_ r255: Double,
-          _ g255: Double,
-          _ b255: Double) {
+    public init(
+        _ r255: Double,
+        _ g255: Double,
+        _ b255: Double
+    ) {
         
+        ///
         self.init(
             red: r255/255.0,
             green: g255/255.0,
@@ -26,7 +29,7 @@ public extension Color {
 extension Color: Codable {
     
     ///
-    public func encode (to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         
         ///
         var container = encoder.singleValueContainer()
@@ -42,7 +45,7 @@ extension Color: Codable {
     }
     
     ///
-    public init (from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         
         ///
         let data = try decoder.singleValueContainer().decode(Data.self)
@@ -62,17 +65,17 @@ extension Color: Codable {
 }
 
 #if os(iOS) || os(watchOS) || os(tvOS)
-fileprivate typealias PlatformColor = UIColor
+private typealias PlatformColor = UIColor
 @available(iOS 15, watchOS 8, tvOS 15, *)
-fileprivate extension Color {
+private extension Color {
     init(platformColor: PlatformColor) {
         self.init(uiColor: platformColor)
     }
 }
 #elseif os(macOS)
-fileprivate typealias PlatformColor = NSColor
+private typealias PlatformColor = NSColor
 @available(macOS 12, *)
-fileprivate extension Color {
+private extension Color {
     init(platformColor: PlatformColor) {
         self.init(nsColor: platformColor)
     }

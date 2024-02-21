@@ -9,7 +9,7 @@
 extension Font.Weight: Codable {
     
     ///
-    public func encode (to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         
         ///
         var container = encoder.singleValueContainer()
@@ -30,7 +30,7 @@ extension Font.Weight: Codable {
     }
     
     ///
-    public init (from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         
         ///
         switch try decoder

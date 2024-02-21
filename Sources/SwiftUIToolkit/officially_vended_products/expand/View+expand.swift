@@ -6,13 +6,15 @@
 //
 
 ///
-public extension View {
+extension View {
     
     ///
-    func expand
-        (along axis: HorizontalAxisOverloadDisambiguator,
-         alignment: HorizontalAlignment = .center)
-    -> some View {
+    public func expand(
+        along axis: HorizontalAxisOverloadDisambiguator,
+        alignment: HorizontalAlignment = .center
+    ) -> some View {
+        
+        ///
         HStack {
             Spacer(minLength: 0)
                 .nullify(if: alignment.isEqual(to: .leading))
@@ -23,10 +25,12 @@ public extension View {
     }
     
     ///
-    func expand
-        (along axis: VerticalAxisOverloadDisambiguator,
-         alignment: VerticalAlignment = .center)
-    -> some View {
+    public func expand(
+        along axis: VerticalAxisOverloadDisambiguator,
+        alignment: VerticalAlignment = .center
+    ) -> some View {
+        
+        ///
         VStack {
             Spacer(minLength: 0)
                 .nullify(if: alignment.isEqual(to: .top))
@@ -46,10 +50,14 @@ public struct VerticalAxisOverloadDisambiguator {
 }
 
 ///
-public extension View {
+extension View {
     
     ///
-    func expand (alignment: Alignment = .center) -> some View {
+    public func expand(
+        alignment: Alignment = .center
+    ) -> some View {
+        
+        ///
         ZStack(alignment: alignment) {
             Color.clear
             self

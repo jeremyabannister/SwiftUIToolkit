@@ -6,17 +6,18 @@
 //
 
 ///
-public extension View {
+extension View {
     
     ///
-    func optionalOverlay
-        <Overlay: View,
-         DisplayedValue>
-            (value: Optional<DisplayedValue>,
-             transition: AnyTransition = .scale(scale: 0.00001),
-             alignment: Alignment = .center,
-             @ViewBuilder overlay: (DisplayedValue)->Overlay)
-                -> some View {
+    public func optionalOverlay<
+        Overlay: View,
+        DisplayedValue
+    >(
+        value: Optional<DisplayedValue>,
+        transition: AnyTransition = .scale(scale: 0.00001),
+        alignment: Alignment = .center,
+        @ViewBuilder overlay: (DisplayedValue)->Overlay
+    ) -> some View {
         
         ///
         self.overlay(

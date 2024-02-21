@@ -10,19 +10,26 @@ extension Axis: ExpressionErgonomic { }
 
 ///
 @available(iOS 14.0, macOS 11.0, *)
-public extension Axis {
+extension Axis {
     
     ///
-    func defaultStackDescription (eagerOrLazy: EagerOrLazy = .eager) -> StackDescription {
-        StackAxis(self).defaultStackDescription(eagerOrLazy: eagerOrLazy)
+    public func defaultStackDescription(
+        eagerOrLazy: EagerOrLazy = .eager
+    ) -> StackDescription {
+        
+        ///
+        StackAxis(self)
+            .defaultStackDescription(
+                eagerOrLazy: eagerOrLazy
+            )
     }
 }
 
 ///
-public extension Axis {
+extension Axis {
     
     ///
-    var correspondingAxisSet: Axis.Set {
+    public var correspondingAxisSet: Axis.Set {
         switch self {
         case .horizontal: return .horizontal
         case .vertical: return .vertical

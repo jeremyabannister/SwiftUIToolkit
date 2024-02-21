@@ -6,10 +6,10 @@
 //
 
 ///
-public extension Font {
+extension Font {
     
     ///
-    enum Family: ProperValueType {
+    public enum Family: ProperValueType {
         
         ///
         case system

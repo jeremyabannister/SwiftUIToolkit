@@ -11,32 +11,40 @@ public enum StackDescription: Equatable,
                               ExpressionErgonomic {
     
     ///
-    case H (eagerOrLazy: EagerOrLazy,
-            alignment: VerticalAlignment,
-            spacing: CGFloat?)
+    case H(eagerOrLazy: EagerOrLazy,
+           alignment: VerticalAlignment,
+           spacing: CGFloat?)
     
     ///
-    case V (eagerOrLazy: EagerOrLazy,
-            alignment: HorizontalAlignment,
-            spacing: CGFloat?)
+    case V(eagerOrLazy: EagerOrLazy,
+           alignment: HorizontalAlignment,
+           spacing: CGFloat?)
     
     ///
-    case Z (alignment: Alignment)
+    case Z(alignment: Alignment)
 }
 
 ///
 @available(macOS 11.0, iOS 14.0, watchOS 7, tvOS 14, *)
-public extension StackDescription {
+extension StackDescription {
     
     ///
     @ViewBuilder
-    func makeStack <Content: View> (@ViewBuilder contentBuilder: ()->Content) -> some View {
+    public func makeStack<
+        Content: View
+    >(
+        @ViewBuilder contentBuilder: ()->Content
+    ) -> some View {
         
         ///
         switch self {
-        case .H (let eagerOrLazy,
-                 let alignment,
-                 let spacing):
+            
+        ///
+        case .H(let eagerOrLazy,
+                let alignment,
+                let spacing):
+            
+            ///
             eagerOrLazy
                 .horizontalStack(
                     alignment: alignment,
@@ -44,9 +52,12 @@ public extension StackDescription {
                     contentBuilder: contentBuilder
                 )
             
-        case .V (let eagerOrLazy,
-                 let alignment,
-                 let spacing):
+        ///
+        case .V(let eagerOrLazy,
+                let alignment,
+                let spacing):
+            
+            ///
             eagerOrLazy
                 .verticalStack(
                     alignment: alignment,
@@ -54,32 +65,42 @@ public extension StackDescription {
                     contentBuilder: contentBuilder
                 )
             
-        case .Z (let alignment):
-            ZStack(alignment: alignment) {
-                contentBuilder()
-            }
+        ///
+        case .Z(let alignment):
+            
+            ///
+            ZStack(
+                alignment: alignment,
+                content: contentBuilder
+            )
         }
     }
 }
 
 ///
 @available(iOS 14.0, macOS 11.0, *)
-public extension StackDescription {
+extension StackDescription {
     
     ///
-    var eagerOrLazy: EagerOrLazy {
+    public var eagerOrLazy: EagerOrLazy {
         get {
             switch self {
-            case .H (let eagerOrLazy, _, _): return eagerOrLazy
-            case .V (let eagerOrLazy, _, _): return eagerOrLazy
+            case .H(let eagerOrLazy, _, _): return eagerOrLazy
+            case .V(let eagerOrLazy, _, _): return eagerOrLazy
             case .Z: return .eager
             }
         }
         set {
+            
+            ///
             switch self {
-            case .H (_,
-                     let alignment,
-                     let spacing):
+                
+            ///
+            case .H(_,
+                    let alignment,
+                    let spacing):
+                
+                ///
                 self =
                     .H(
                         eagerOrLazy: newValue,
@@ -87,9 +108,12 @@ public extension StackDescription {
                         spacing: spacing
                     )
                 
-            case .V (_,
-                     let alignment,
-                     let spacing):
+            ///
+            case .V(_,
+                    let alignment,
+                    let spacing):
+                
+                ///
                 self =
                     .V(
                         eagerOrLazy: newValue,
@@ -97,6 +121,7 @@ public extension StackDescription {
                         spacing: spacing
                     )
                 
+            ///
             case .Z: break
             }
         }

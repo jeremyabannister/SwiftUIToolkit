@@ -15,21 +15,27 @@ public struct TextStyle: ProperValueType {
     public var color: Color?
     
     ///
-    public init (font: FontDescription,
-                 color: Color? = nil) {
+    public init(
+        font: FontDescription,
+        color: Color? = nil
+    ) {
         
+        ///
         self.font = font
         self.color = color
     }
 }
 
 ///
-public extension TextStyle {
+extension TextStyle {
     
     ///
-    static func roundedBold (size: CGFloat,
-                             color: Color? = nil) -> Self {
+    public static func roundedBold(
+        size: CGFloat,
+        color: Color? = nil
+    ) -> Self {
         
+        ///
         .bold(
             size: size,
             design: .rounded,
@@ -39,15 +45,17 @@ public extension TextStyle {
 }
 
 ///
-public extension TextStyle {
+extension TextStyle {
     
     ///
-    static func rounded (family: Font.Family = .system,
-                         size: CGFloat,
-                         weight: Font.Weight = .regular,
-                         color: Color? = nil)
-        -> Self {
+    public static func rounded(
+        family: Font.Family = .system,
+        size: CGFloat,
+        weight: Font.Weight = .regular,
+        color: Color? = nil
+    ) -> Self {
         
+        ///
         .init(
             font:
                 .init(
@@ -61,12 +69,14 @@ public extension TextStyle {
     }
     
     ///
-    static func bold (family: Font.Family = .system,
-                      size: CGFloat,
-                      design: Font.Design = .default,
-                      color: Color? = nil)
-        -> Self {
+    public static func bold(
+        family: Font.Family = .system,
+        size: CGFloat,
+        design: Font.Design = .default,
+        color: Color? = nil
+    ) -> Self {
         
+        ///
         .init(
             font:
                 .init(
@@ -81,15 +91,17 @@ public extension TextStyle {
 }
 
 ///
-public extension TextStyle {
+extension TextStyle {
     
     ///
-    static func systemFont (size: CGFloat,
-                            weight: Font.Weight = .regular,
-                            design: Font.Design = .default,
-                            color: Color? = nil)
-        -> Self {
+    public static func systemFont(
+        size: CGFloat,
+        weight: Font.Weight = .regular,
+        design: Font.Design = .default,
+        color: Color? = nil
+    ) -> Self {
         
+        ///
         .init(
             font:
                 .system(
@@ -103,17 +115,17 @@ public extension TextStyle {
 }
 
 ///
-public extension TextStyle {
+extension TextStyle {
     
     ///
-    init () {
+    public init() {
         self.init(font: .init())
     }
 }
 
 ///
-public extension TextStyle {
+extension TextStyle {
     
     ///
-    static var defaultColor: Color = .black
+    public static var defaultColor: Color = .black
 }

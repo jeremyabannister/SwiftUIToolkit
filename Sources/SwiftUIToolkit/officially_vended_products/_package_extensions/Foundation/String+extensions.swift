@@ -6,10 +6,11 @@
 //
 
 ///
-public extension String {
+extension String {
     
     ///
-    func displayed (_ textStyle: TextStyle) -> some View {
-        Text(self).textStyle(textStyle)
+    public func displayed(_ textStyle: TextStyle) -> some View {
+        Text(self)
+            .textStyle(textStyle)
     }
 }

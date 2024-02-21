@@ -42,11 +42,15 @@ public struct SFSymbol: View {
 
 ///
 @available(iOS 13.0, macOS 11.0, *)
-public extension SFSymbol {
+extension SFSymbol {
     
     ///
-    func filledCircle (circleColor: Color,
-                       symbolColor: Color) -> some View {
+    public func filledCircle(
+        circleColor: Color,
+        symbolColor: Color
+    ) -> some View {
+        
+        ///
         self
             .foregroundColor(circleColor)
             .aspectRatio(1, contentMode: .fit)

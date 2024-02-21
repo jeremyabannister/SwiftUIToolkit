@@ -12,11 +12,8 @@ extension Binding: ExpressionErgonomic { }
 extension Binding {
     
     ///
-    public func unwrapped
-        <Wrapped>
-        ()
-    -> Binding<Wrapped>?
-    where Value == Wrapped? {
+    public func unwrapped<Wrapped>() -> Binding<Wrapped>?
+        where Value == Wrapped? {
         
         ///
         guard let initialValue = self.wrappedValue else { return nil }
@@ -39,11 +36,8 @@ extension Binding {
     
     ///
     @available(*, deprecated, message: "This method has been renamed to .unwrapped().")
-    public func unwrap
-        <Wrapped>
-        ()
-    -> Binding<Wrapped>?
-    where Value == Optional<Wrapped> {
+    public func unwrap<Wrapped>() -> Binding<Wrapped>?
+        where Value == Optional<Wrapped> {
         
         ///
         if let value = self.wrappedValue {
@@ -62,11 +56,8 @@ extension Binding {
     }
     
     ///
-    public func forceUnwrap
-        <Wrapped>
-        ()
-    -> Binding<Wrapped>
-    where Value == Optional<Wrapped> {
+    public func forceUnwrap<Wrapped>() -> Binding<Wrapped>
+        where Value == Optional<Wrapped> {
         
         ///
         self.map(
@@ -80,11 +71,12 @@ extension Binding {
 extension Binding {
     
     ///
-    public func map
-        <NewValue>
-        (forward forwardTransform: @escaping (Value)->NewValue,
-         reverse reverseTransform: @escaping (NewValue)->Value)
-    -> Binding<NewValue> {
+    public func map<
+        NewValue
+    >(
+        forward forwardTransform: @escaping (Value)->NewValue,
+        reverse reverseTransform: @escaping (NewValue)->Value
+    ) -> Binding<NewValue> {
         
         ///
         Binding<NewValue>(

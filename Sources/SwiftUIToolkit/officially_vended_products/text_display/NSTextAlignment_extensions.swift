@@ -6,8 +6,8 @@
 //
 
 #if os(macOS)
-public extension NSTextAlignment {
-    var asTextAlignment: TextAlignment {
+extension NSTextAlignment {
+    public var asTextAlignment: TextAlignment {
         switch self {
         case .left: return .leading
         case .center: return .center

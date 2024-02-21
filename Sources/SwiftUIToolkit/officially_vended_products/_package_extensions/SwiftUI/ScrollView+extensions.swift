@@ -6,13 +6,16 @@
 //
 
 ///
-public extension ScrollView {
+extension ScrollView {
     
     ///
-    init (singleAxis: Axis,
-          showsIndicators: Bool = true,
-          @ViewBuilder content: ()->Content) {
+    public init(
+        singleAxis: Axis,
+        showsIndicators: Bool = true,
+        @ViewBuilder content: ()->Content
+    ) {
         
+        ///
         self.init(
             singleAxis.correspondingAxisSet,
             showsIndicators: showsIndicators,

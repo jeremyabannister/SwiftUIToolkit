@@ -9,19 +9,19 @@
 extension CGSize: ExpressionErgonomic { }
 
 ///
-public extension CGSize {
+extension CGSize {
     
     ///
-    static func square (_ sideLength: CGFloat) -> Self {
+    public static func square(_ sideLength: CGFloat) -> Self {
         .init(width: sideLength, height: sideLength)
     }
 }
 
 ///
-public extension CGSize {
+extension CGSize {
     
     ///
-    var aspectRatio: CGFloat {
+    public var aspectRatio: CGFloat {
         width/height
     }
 }

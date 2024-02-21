@@ -23,13 +23,13 @@ public enum EagerStackDescription: Equatable,
 
 ///
 @available(iOS 14.0, macOS 11.0, *)
-public extension EagerStackDescription {
+extension EagerStackDescription {
     
     ///
-    var asStackDescription: StackDescription {
+    public var asStackDescription: StackDescription {
         switch self {
-        case .H (let alignment,
-                 let spacing):
+        case .H(let alignment,
+                let spacing):
             
             return
                 .H(
@@ -38,8 +38,8 @@ public extension EagerStackDescription {
                     spacing: spacing
                 )
             
-        case .V (let alignment,
-                 let spacing):
+        case .V(let alignment,
+                let spacing):
             
             return
                 .V(
@@ -48,7 +48,7 @@ public extension EagerStackDescription {
                     spacing: spacing
                 )
             
-        case .Z (let alignment):
+        case .Z(let alignment):
             
             return
                 .Z(
@@ -59,33 +59,49 @@ public extension EagerStackDescription {
 }
 
 ///
-public extension EagerStackDescription {
+extension EagerStackDescription {
     
     ///
     @ViewBuilder
-    func makeStack <Content: View> (@ViewBuilder contentBuilder: ()->Content) -> some View {
+    public func makeStack<
+        Content: View
+    >(
+        @ViewBuilder contentBuilder: ()->Content
+    ) -> some View {
+        
+        ///
         switch self {
-        case .H (let alignment,
-                 let spacing):
             
-            HStack(alignment: alignment,
-                   spacing: spacing) {
-                contentBuilder()
-            }
+        ///
+        case .H(let alignment,
+                let spacing):
             
-        case .V (let alignment,
-                 let spacing):
+            ///
+            HStack(
+                alignment: alignment,
+                spacing: spacing,
+                content: contentBuilder
+            )
             
-            VStack(alignment: alignment,
-                   spacing: spacing) {
-                contentBuilder()
-            }
+        ///
+        case .V(let alignment,
+                let spacing):
             
-        case .Z (let alignment):
+            ///
+            VStack(
+                alignment: alignment,
+                spacing: spacing,
+                content: contentBuilder
+            )
             
-            ZStack(alignment: alignment) {
-                contentBuilder()
-            }
+        ///
+        case .Z(let alignment):
+            
+            ///
+            ZStack(
+                alignment: alignment,
+                content: contentBuilder
+            )
         }
     }
 }

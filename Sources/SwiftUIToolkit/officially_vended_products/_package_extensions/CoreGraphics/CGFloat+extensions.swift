@@ -9,10 +9,10 @@
 extension CGFloat: ExpressionErgonomic { }
 
 ///
-public extension CGFloat {
+extension CGFloat {
     
     ///
-    func divided (by dividend: CGFloat) -> Self {
+    public func divided(by dividend: CGFloat) -> Self {
         self / dividend
     }
 }

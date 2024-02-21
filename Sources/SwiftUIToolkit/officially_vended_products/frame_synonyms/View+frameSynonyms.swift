@@ -6,13 +6,15 @@
 //
 
 ///
-public extension View {
+extension View {
     
     ///
-    func width (_ width: CGFloat?,
-                alignment: Alignment = .center)
-        -> some View {
+    public func width(
+        _ width: CGFloat?,
+        alignment: Alignment = .center
+    ) -> some View {
         
+        ///
         self.frame(
             width: width,
             alignment: alignment
@@ -20,10 +22,12 @@ public extension View {
     }
     
     ///
-    func height (_ height: CGFloat?,
-                 alignment: Alignment = .center)
-        -> some View {
+    public func height(
+        _ height: CGFloat?,
+        alignment: Alignment = .center
+    ) -> some View {
         
+        ///
         self.frame(
             height: height,
             alignment: alignment
@@ -31,10 +35,12 @@ public extension View {
     }
     
     ///
-    func minWidth (_ minWidth: CGFloat?,
-                   alignment: Alignment = .center)
-        -> some View {
+    public func minWidth(
+        _ minWidth: CGFloat?,
+        alignment: Alignment = .center
+    ) -> some View {
         
+        ///
         self.frame(
             minWidth: minWidth,
             alignment: alignment
@@ -42,10 +48,12 @@ public extension View {
     }
     
     ///
-    func maxWidth (_ maxWidth: CGFloat?,
-                   alignment: Alignment = .center)
-        -> some View {
+    public func maxWidth(
+        _ maxWidth: CGFloat?,
+        alignment: Alignment = .center
+    ) -> some View {
         
+        ///
         self.frame(
             maxWidth: maxWidth,
             alignment: alignment
@@ -53,10 +61,12 @@ public extension View {
     }
     
     ///
-    func minHeight (_ minHeight: CGFloat?,
-                    alignment: Alignment = .center)
-        -> some View {
+    public func minHeight(
+        _ minHeight: CGFloat?,
+        alignment: Alignment = .center
+    ) -> some View {
         
+        ///
         self.frame(
             minHeight: minHeight,
             alignment: alignment
@@ -64,10 +74,12 @@ public extension View {
     }
     
     ///
-    func maxHeight (_ maxHeight: CGFloat?,
-                    alignment: Alignment = .center)
-        -> some View {
+    public func maxHeight(
+        _ maxHeight: CGFloat?,
+        alignment: Alignment = .center
+    ) -> some View {
         
+        ///
         self.frame(
             maxHeight: maxHeight,
             alignment: alignment
@@ -75,11 +87,13 @@ public extension View {
     }
     
     ///
-    func size (_ width: CGFloat?,
-               _ height: CGFloat?,
-               alignment: Alignment = .center)
-        -> some View {
+    public func size(
+        _ width: CGFloat?,
+        _ height: CGFloat?,
+        alignment: Alignment = .center
+    ) -> some View {
         
+        ///
         self.frame(
             width: width,
             height: height,
@@ -88,11 +102,13 @@ public extension View {
     }
     
     ///
-    func size (width: CGFloat?,
-               height: CGFloat?,
-               alignment: Alignment = .center)
-        -> some View {
+    public func size(
+        width: CGFloat?,
+        height: CGFloat?,
+        alignment: Alignment = .center
+    ) -> some View {
         
+        ///
         self.frame(
             width: width,
             height: height,
@@ -101,10 +117,12 @@ public extension View {
     }
     
     ///
-    func size (_ size: CGSize?,
-               alignment: Alignment = .center)
-        -> some View {
+    public func size(
+        _ size: CGSize?,
+        alignment: Alignment = .center
+    ) -> some View {
         
+        ///
         self.frame(
             width: size?.width,
             height: size?.height,
@@ -113,10 +131,12 @@ public extension View {
     }
     
     ///
-    func squareFrame (_ sideLength: CGFloat,
-                      alignment: Alignment = .center)
-        -> some View {
+    public func squareFrame(
+        _ sideLength: CGFloat,
+        alignment: Alignment = .center
+    ) -> some View {
         
+        ///
         self.frame(
             width: sideLength,
             height: sideLength,
@@ -125,10 +145,12 @@ public extension View {
     }
     
     ///
-    func frame (size: CGSize?,
-                alignment: Alignment = .center)
-        -> some View {
+    public func frame(
+        size: CGSize?,
+        alignment: Alignment = .center
+    ) -> some View {
         
+        ///
         self.frame(
             width: size?.width,
             height: size?.height,
@@ -137,11 +159,13 @@ public extension View {
     }
     
     ///
-    func frame (_ width: CGFloat?,
-                _ height: CGFloat?,
-                alignment: Alignment = .center)
-        -> some View {
+    public func frame(
+        _ width: CGFloat?,
+        _ height: CGFloat?,
+        alignment: Alignment = .center
+    ) -> some View {
         
+        ///
         self.frame(
             width: width,
             height: height,

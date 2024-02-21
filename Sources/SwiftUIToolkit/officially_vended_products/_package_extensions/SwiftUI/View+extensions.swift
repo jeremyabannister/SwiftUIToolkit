@@ -6,32 +6,34 @@
 //
 
 ///
-public extension View {
+extension View {
     
     ///
-    func leadStack
-        (alignment: VerticalAlignment = .center,
-         spacing: CGFloat? = nil,
-         @ViewBuilder _ viewBuilder: ()->some View)
-    -> some View {
-            
-            HStack(
-                alignment: alignment,
-                spacing: spacing,
-                content: {
-                    viewBuilder()
-                    self
-                }
-            )
+    public func leadStack(
+        alignment: VerticalAlignment = .center,
+        spacing: CGFloat? = nil,
+        @ViewBuilder _ viewBuilder: ()->some View
+    ) -> some View {
+        
+        ///
+        HStack(
+            alignment: alignment,
+            spacing: spacing,
+            content: {
+                viewBuilder()
+                self
+            }
+        )
     }
     
     ///
-    func trailStack
-        (alignment: VerticalAlignment = .center,
-         spacing: CGFloat? = nil,
-         @ViewBuilder _ viewBuilder: ()->some View)
-    -> some View {
-            
+    public func trailStack(
+        alignment: VerticalAlignment = .center,
+        spacing: CGFloat? = nil,
+        @ViewBuilder _ viewBuilder: ()->some View
+    ) -> some View {
+        
+        ///
         HStack(
             alignment: alignment,
             spacing: spacing,
@@ -43,29 +45,31 @@ public extension View {
     }
     
     ///
-    func topStack
-        (alignment: HorizontalAlignment = .center,
-         spacing: CGFloat? = nil,
-         @ViewBuilder _ viewBuilder: ()->some View)
-    -> some View {
-            
-            VStack(
-                alignment: alignment,
-                spacing: spacing,
-                content: {
-                    viewBuilder()
-                    self
-                }
-            )
+    public func topStack(
+        alignment: HorizontalAlignment = .center,
+        spacing: CGFloat? = nil,
+        @ViewBuilder _ viewBuilder: ()->some View
+    ) -> some View {
+        
+        ///
+        VStack(
+            alignment: alignment,
+            spacing: spacing,
+            content: {
+                viewBuilder()
+                self
+            }
+        )
     }
     
     ///
-    func bottomStack
-        (alignment: HorizontalAlignment = .center,
-         spacing: CGFloat? = nil,
-         @ViewBuilder _ viewBuilder: ()->some View)
-    -> some View {
-            
+    public func bottomStack(
+        alignment: HorizontalAlignment = .center,
+        spacing: CGFloat? = nil,
+        @ViewBuilder _ viewBuilder: ()->some View
+    ) -> some View {
+        
+        ///
         VStack(
             alignment: alignment,
             spacing: spacing,
@@ -78,24 +82,24 @@ public extension View {
 }
 
 ///
-public extension View {
+extension View {
     
     ///
-    func asAnyView () -> AnyView {
+    public func asAnyView() -> AnyView {
         AnyView(self)
     }
 }
 
 ///
-public extension View {
+extension View {
     
     ///
-    func nullify (if predicate: (Self)->Bool) -> Self? {
+    public func nullify(if predicate: (Self)->Bool) -> Self? {
         nullify(if: predicate(self))
     }
     
     ///
-    func nullify (if condition: Bool) -> Self? {
+    public func nullify(if condition: Bool) -> Self? {
         condition ? nil : self
     }
 }

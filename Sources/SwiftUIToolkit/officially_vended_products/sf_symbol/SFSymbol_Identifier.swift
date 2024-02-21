@@ -7,17 +7,17 @@
 
 ///
 @available(iOS 13.0, macOS 11.0, *)
-public extension SFSymbol {
+extension SFSymbol {
     
     ///
-    struct Identifier: ProperValueType,
-                       ExpressibleByStringLiteral {
+    public struct Identifier: ProperValueType,
+                              ExpressibleByStringLiteral {
         
         ///
         public private(set) var string: String
         
         ///
-        public init (stringLiteral value: String) {
+        public init(stringLiteral value: String) {
             self.string = value
         }
     }
@@ -25,90 +25,90 @@ public extension SFSymbol {
 
 ///
 @available(iOS 13.0, macOS 11.0, *)
-public extension SFSymbol.Identifier {
+extension SFSymbol.Identifier {
     
     ///
-    static var checkmark: Self {
+    public static var checkmark: Self {
         "checkmark"
     }
     
     ///
-    static var xmark: Self {
+    public static var xmark: Self {
         "xmark"
     }
 }
 
 ///
 @available(iOS 13.0, macOS 11.0, *)
-public extension SFSymbol.Identifier {
+extension SFSymbol.Identifier {
     
     ///
-    var bin: Self {
+    public var bin: Self {
         self.appending("bin")
     }
     
     ///
-    var seal: Self {
+    public var seal: Self {
         self.appending("seal")
     }
     
     ///
-    var icloud: Self {
+    public var icloud: Self {
         self.appending("icloud")
     }
     
     ///
-    var app: Self {
+    public var app: Self {
         self.appending("app")
     }
     
     ///
-    var rectangle: Self {
+    public var rectangle: Self {
         self.appending("rectangle")
     }
     
     ///
-    var diamond: Self {
+    public var diamond: Self {
         self.appending("diamond")
     }
     
     ///
-    var shield: Self {
+    public var shield: Self {
         self.appending("shield")
     }
     
     ///
-    var octagon: Self {
+    public var octagon: Self {
         self.appending("octagon")
     }
     
     ///
-    var circle: Self {
+    public var circle: Self {
         self.appending("circle")
     }
     
     ///
-    var square: Self {
+    public var square: Self {
         self.appending("square")
     }
 }
 
 ///
 @available(iOS 13.0, macOS 11.0, *)
-public extension SFSymbol.Identifier {
+extension SFSymbol.Identifier {
     
     ///
-    var fill: Self {
+    public var fill: Self {
         self.appending("fill")
     }
 }
 
 ///
 @available(iOS 13.0, macOS 11.0, *)
-public extension SFSymbol.Identifier {
+extension SFSymbol.Identifier {
     
     ///
-    func appending (_ component: String) -> Self {
+    public func appending(_ component: String) -> Self {
         .init(stringLiteral: string + "." + component)
     }
 }

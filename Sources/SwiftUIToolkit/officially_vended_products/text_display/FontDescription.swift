@@ -21,11 +21,14 @@ public struct FontDescription: ProperValueType {
     public var design: Font.Design
     
     ///
-    public init (family: Font.Family,
-                 size: CGFloat,
-                 weight: Font.Weight,
-                 design: Font.Design) {
+    public init(
+        family: Font.Family,
+        size: CGFloat,
+        weight: Font.Weight,
+        design: Font.Design
+    ) {
         
+        ///
         self.family = family
         self.size = size
         self.weight = weight
@@ -34,14 +37,16 @@ public struct FontDescription: ProperValueType {
 }
 
 ///
-public extension FontDescription {
+extension FontDescription {
     
     ///
-    static func system (size: CGFloat,
-                        weight: Font.Weight = .regular,
-                        design: Font.Design = .default)
-        -> Self {
+    public static func system(
+        size: CGFloat,
+        weight: Font.Weight = .regular,
+        design: Font.Design = .default
+    ) -> Self {
         
+        ///
         .init(
             family: .system,
             size: size,
@@ -51,12 +56,14 @@ public extension FontDescription {
     }
     
     ///
-    static func custom (_ fontName: String,
-                        size: CGFloat,
-                        weight: Font.Weight = .regular,
-                        design: Font.Design = .default)
-        -> Self {
+    public static func custom(
+        _ fontName: String,
+        size: CGFloat,
+        weight: Font.Weight = .regular,
+        design: Font.Design = .default
+    ) -> Self {
         
+        ///
         .init(
             family: .custom(fontName),
             size: size,
@@ -66,7 +73,7 @@ public extension FontDescription {
     }
     
     ///
-    var asFont: Font {
+    public var asFont: Font {
         switch family {
         case .system:
             return
@@ -87,10 +94,10 @@ public extension FontDescription {
 }
 
 ///
-public extension FontDescription {
+extension FontDescription {
     
     ///
-    init () {
+    public init() {
         self = .system(size: 12)
     }
 }
@@ -99,8 +106,8 @@ public extension FontDescription {
 #if os(iOS)
 
 ///
-public extension FontDescription {
-    var asUIFont: UIFont {
+extension FontDescription {
+    public var asUIFont: UIFont {
         switch family {
         case .system:
             return UIFont.systemFont(ofSize: size)
@@ -115,8 +122,8 @@ public extension FontDescription {
 #elseif os(macOS)
 
 ///
-public extension FontDescription {
-    var asNSFont: NSFont {
+extension FontDescription {
+    public var asNSFont: NSFont {
         switch family {
         case .system:
             return NSFont.systemFont(ofSize: size)

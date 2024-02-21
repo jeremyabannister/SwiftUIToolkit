@@ -6,16 +6,17 @@
 //
 
 ///
-public extension View {
+extension View {
     
     ///
-    func conditionalOverlay
-        <Overlay: View>
-            (condition: Bool,
-             transition: AnyTransition = .scale(scale: 0.00001),
-             alignment: Alignment = .center,
-             @ViewBuilder overlay: ()->Overlay)
-                -> some View {
+    public func conditionalOverlay<
+        Overlay: View
+    >(
+        condition: Bool,
+        transition: AnyTransition = .scale(scale: 0.00001),
+        alignment: Alignment = .center,
+        @ViewBuilder overlay: ()->Overlay
+    ) -> some View {
         
         ///
         self.optionalOverlay(

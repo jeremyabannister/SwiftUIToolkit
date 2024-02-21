@@ -6,14 +6,17 @@
 //
 
 ///
-public extension View {
+extension View {
     
     ///
-    func onPressed
-        <ModifiedView: View>
-        (perform action: @escaping ()->(),
-         modifyBaseView: @escaping (Self, Bool)->ModifiedView)
-    -> some View {
+    public func onPressed<
+        ModifiedView: View
+    >(
+        perform action: @escaping ()->(),
+        modifyBaseView: @escaping (Self, Bool)->ModifiedView
+    ) -> some View {
+        
+        ///
         Button(action: action, label: { self })
             .buttonStyle(
                 CustomButtonStyle(
@@ -25,10 +28,14 @@ public extension View {
 }
 
 ///
-public extension View {
+extension View {
     
     ///
-    func onPressed (_ onPressed: @escaping ()->()) -> some View {
+    public func onPressed(
+        _ onPressed: @escaping ()->()
+    ) -> some View {
+        
+        ///
         Button(action: onPressed, label: { self })
             .buttonStyle(
                 CustomButtonStyle(
@@ -43,10 +50,10 @@ public extension View {
 }
 
 ///
-fileprivate struct CustomButtonStyle
-    <BaseView: View,
-     Button: View>:
-        ButtonStyle {
+private struct CustomButtonStyle<
+    BaseView: View,
+    Button: View
+>: ButtonStyle {
     
     ///
     var baseView: BaseView

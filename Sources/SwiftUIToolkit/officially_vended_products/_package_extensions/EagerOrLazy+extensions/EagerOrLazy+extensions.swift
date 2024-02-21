@@ -7,17 +7,19 @@
 
 ///
 @available(macOS 11.0, iOS 14.0, watchOS 7, tvOS 14, *)
-public extension EagerOrLazy {
+extension EagerOrLazy {
     
     ///
     @ViewBuilder
-    func horizontalStack
-    <Content: View>
-    (alignment: VerticalAlignment = .center,
-     spacing: CGFloat? = nil,
-     @ViewBuilder contentBuilder: ()->Content)
-    -> some View {
+    public func horizontalStack<
+        Content: View
+    >(
+        alignment: VerticalAlignment = .center,
+        spacing: CGFloat? = nil,
+        @ViewBuilder contentBuilder: ()->Content
+    ) -> some View {
         
+        ///
         switch self {
         case .eager:
             HStack(alignment: alignment,
@@ -35,13 +37,15 @@ public extension EagerOrLazy {
     
     ///
     @ViewBuilder
-    func verticalStack
-    <Content: View>
-    (alignment: HorizontalAlignment = .center,
-     spacing: CGFloat? = nil,
-     @ViewBuilder contentBuilder: ()->Content)
-    -> some View {
+    public func verticalStack<
+        Content: View
+    >(
+        alignment: HorizontalAlignment = .center,
+        spacing: CGFloat? = nil,
+        @ViewBuilder contentBuilder: ()->Content
+    ) -> some View {
         
+        ///
         switch self {
         case .eager:
             VStack(alignment: alignment,

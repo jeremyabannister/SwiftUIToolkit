@@ -17,9 +17,12 @@ public struct MultilineTextStyle: ProperValueType {
     public var multilineTextAlignment: TextAlignment
     
     ///
-    public init (textStyle: TextStyle,
-                 multilineTextAlignment: TextAlignment = .center) {
+    public init(
+        textStyle: TextStyle,
+        multilineTextAlignment: TextAlignment = .center
+    ) {
         
+        ///
         self.textStyle = textStyle
         self.multilineTextAlignment = multilineTextAlignment
     }
@@ -28,13 +31,16 @@ public struct MultilineTextStyle: ProperValueType {
 // MARK: - Stack -
 
 ///
-public extension MultilineTextStyle {
+extension MultilineTextStyle {
     
     ///
-    init (font: FontDescription,
-          color: Color,
-          multilineTextAlignment: TextAlignment = .center) {
+    public init(
+        font: FontDescription,
+        color: Color,
+        multilineTextAlignment: TextAlignment = .center
+    ) {
         
+        ///
         self.init(
             textStyle:
                 .init(

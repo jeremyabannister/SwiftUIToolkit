@@ -11,15 +11,25 @@ public protocol DisplayableValue {
 }
 
 ///
-public extension DisplayableValue {
+extension DisplayableValue {
     
     ///
-    func displayed <Content: View> (@ViewBuilder using contentBuilder: (Self)->Content) -> Content {
+    public func displayed<
+        Content: View
+    >(
+        @ViewBuilder using contentBuilder: (Self)->Content
+    ) -> Content {
+        
+        ///
         contentBuilder(self)
     }
     
     ///
-    func displayed (_ displayFunction: ValueDisplayFunction<Self>) -> some View {
+    public func displayed(
+        _ displayFunction: ValueDisplayFunction<Self>
+    ) -> some View {
+        
+        ///
         displayFunction(self)
     }
 }

@@ -20,10 +20,14 @@ public enum StackAxis: ProperValueType {
 
 ///
 @available(iOS 14.0, macOS 11.0, *)
-public extension StackAxis {
+extension StackAxis {
     
     ///
-    func defaultStackDescription (eagerOrLazy: EagerOrLazy = .eager) -> StackDescription {
+    public func defaultStackDescription(
+        eagerOrLazy: EagerOrLazy = .eager
+    ) -> StackDescription {
+        
+        ///
         self
             .defaultEagerStackDescription()
             .asStackDescription
@@ -32,10 +36,10 @@ public extension StackAxis {
 }
 
 ///
-public extension StackAxis {
+extension StackAxis {
     
     ///
-    func defaultEagerStackDescription () -> EagerStackDescription {
+    public func defaultEagerStackDescription() -> EagerStackDescription {
         switch self {
         case .H: return .H(alignment: .center, spacing: nil)
         case .V: return .V(alignment: .center, spacing: nil)
@@ -45,10 +49,10 @@ public extension StackAxis {
 }
 
 ///
-public extension StackAxis {
+extension StackAxis {
     
     ///
-    init (_ axis: Axis) {
+    public init(_ axis: Axis) {
         switch axis {
         case .horizontal: self = .H
         case .vertical: self = .V
