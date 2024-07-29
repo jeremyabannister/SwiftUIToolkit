@@ -7,21 +7,28 @@
 
 ///
 @available(iOS 14.0, macOS 11.0, *)
-public enum StackDescription: Equatable,
-                              ExpressionErgonomic {
+public enum StackDescription:
+    Equatable,
+    ExpressionErgonomic {
     
     ///
-    case H(eagerOrLazy: EagerOrLazy,
-           alignment: VerticalAlignment,
-           spacing: CGFloat?)
+    case H(
+        eagerOrLazy: EagerOrLazy,
+        alignment: VerticalAlignment,
+        spacing: CGFloat?
+    )
     
     ///
-    case V(eagerOrLazy: EagerOrLazy,
-           alignment: HorizontalAlignment,
-           spacing: CGFloat?)
+    case V(
+        eagerOrLazy: EagerOrLazy,
+        alignment: HorizontalAlignment,
+        spacing: CGFloat?
+    )
     
     ///
-    case Z(alignment: Alignment)
+    case Z(
+        alignment: Alignment
+    )
 }
 
 ///
@@ -40,9 +47,11 @@ extension StackDescription {
         switch self {
             
         ///
-        case .H(let eagerOrLazy,
-                let alignment,
-                let spacing):
+        case .H(
+            let eagerOrLazy,
+            let alignment,
+            let spacing
+        ):
             
             ///
             eagerOrLazy
@@ -53,9 +62,11 @@ extension StackDescription {
                 )
             
         ///
-        case .V(let eagerOrLazy,
-                let alignment,
-                let spacing):
+        case .V(
+            let eagerOrLazy,
+            let alignment,
+            let spacing
+        ):
             
             ///
             eagerOrLazy
@@ -66,7 +77,9 @@ extension StackDescription {
                 )
             
         ///
-        case .Z(let alignment):
+        case .Z(
+            let alignment
+        ):
             
             ///
             ZStack(
@@ -96,9 +109,11 @@ extension StackDescription {
             switch self {
                 
             ///
-            case .H(_,
-                    let alignment,
-                    let spacing):
+            case .H(
+                _,
+                let alignment,
+                let spacing
+            ):
                 
                 ///
                 self =
@@ -109,9 +124,11 @@ extension StackDescription {
                     )
                 
             ///
-            case .V(_,
-                    let alignment,
-                    let spacing):
+            case .V(
+                _,
+                let alignment,
+                let spacing
+            ):
                 
                 ///
                 self =

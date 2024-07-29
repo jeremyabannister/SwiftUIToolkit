@@ -10,15 +10,21 @@ public enum EagerStackDescription: Equatable,
                                    ExpressionErgonomic {
     
     ///
-    case H (alignment: VerticalAlignment,
-            spacing: CGFloat?)
+    case H(
+        alignment: VerticalAlignment,
+        spacing: CGFloat?
+    )
     
     ///
-    case V (alignment: HorizontalAlignment,
-            spacing: CGFloat?)
+    case V(
+        alignment: HorizontalAlignment,
+        spacing: CGFloat?
+    )
     
     ///
-    case Z (alignment: Alignment)
+    case Z(
+        alignment: Alignment
+    )
 }
 
 ///
@@ -27,33 +33,45 @@ extension EagerStackDescription {
     
     ///
     public var asStackDescription: StackDescription {
+        
+        ///
         switch self {
-        case .H(let alignment,
-                let spacing):
             
-            return
-                .H(
-                    eagerOrLazy: .eager,
-                    alignment: alignment,
-                    spacing: spacing
-                )
+        ///
+        case .H(
+            let alignment,
+            let spacing
+        ):
             
-        case .V(let alignment,
-                let spacing):
+            ///
+            .H(
+                eagerOrLazy: .eager,
+                alignment: alignment,
+                spacing: spacing
+            )
             
-            return
-                .V(
-                    eagerOrLazy: .eager,
-                    alignment: alignment,
-                    spacing: spacing
-                )
+        ///
+        case .V(
+            let alignment,
+            let spacing
+        ):
             
-        case .Z(let alignment):
+            ///
+            .V(
+                eagerOrLazy: .eager,
+                alignment: alignment,
+                spacing: spacing
+            )
             
-            return
-                .Z(
-                    alignment: alignment
-                )
+        ///
+        case .Z(
+            let alignment
+        ):
+            
+            ///
+            .Z(
+                alignment: alignment
+            )
         }
     }
 }
@@ -73,8 +91,10 @@ extension EagerStackDescription {
         switch self {
             
         ///
-        case .H(let alignment,
-                let spacing):
+        case .H(
+            let alignment,
+            let spacing
+        ):
             
             ///
             HStack(
@@ -84,8 +104,10 @@ extension EagerStackDescription {
             )
             
         ///
-        case .V(let alignment,
-                let spacing):
+        case .V(
+            let alignment,
+            let spacing
+        ):
             
             ///
             VStack(
@@ -95,7 +117,9 @@ extension EagerStackDescription {
             )
             
         ///
-        case .Z(let alignment):
+        case .Z(
+            let alignment
+        ):
             
             ///
             ZStack(

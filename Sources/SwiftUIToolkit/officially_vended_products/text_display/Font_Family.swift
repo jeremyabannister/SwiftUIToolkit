@@ -9,12 +9,14 @@
 extension Font {
     
     ///
-    public enum Family: ProperValueType {
+    public enum Family:
+        ValueType,
+        Codable {
         
         ///
         case system
         
         ///
-        case custom (String)
+        case custom(String)
     }
 }

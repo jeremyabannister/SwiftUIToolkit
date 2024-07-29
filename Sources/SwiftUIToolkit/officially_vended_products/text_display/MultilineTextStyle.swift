@@ -8,12 +8,12 @@
 // MARK: - Head -
 
 ///
-public struct MultilineTextStyle: ProperValueType {
+public struct MultilineTextStyle:
+    ValueType,
+    Codable {
     
     ///
     public var textStyle: TextStyle
-    
-    ///
     public var multilineTextAlignment: TextAlignment
     
     ///

@@ -24,8 +24,10 @@ extension ValueDisplayFunction
         
         ///
         .init { array in
-            ScrollView(singleAxis: axis,
-                       showsIndicators: showsIndicators) {
+            ScrollView(
+                singleAxis: axis,
+                showsIndicators: showsIndicators
+            ) {
                 
                 array.displayed(
                     .stack(

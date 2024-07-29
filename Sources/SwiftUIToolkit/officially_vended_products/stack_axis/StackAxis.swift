@@ -6,7 +6,9 @@
 //
 
 ///
-public enum StackAxis: ProperValueType {
+public enum StackAxis:
+    ValueType,
+    Codable {
     
     ///
     case H

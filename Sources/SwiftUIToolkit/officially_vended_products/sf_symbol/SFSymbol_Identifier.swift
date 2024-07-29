@@ -10,8 +10,10 @@
 extension SFSymbol {
     
     ///
-    public struct Identifier: ProperValueType,
-                              ExpressibleByStringLiteral {
+    public struct Identifier:
+        ValueType,
+        Codable,
+        ExpressibleByStringLiteral {
         
         ///
         public private(set) var string: String

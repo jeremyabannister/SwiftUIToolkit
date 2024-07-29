@@ -6,18 +6,14 @@
 //
 
 ///
-public struct FontDescription: ProperValueType {
+public struct FontDescription:
+    ValueType,
+    Codable {
     
     ///
     public var family: Font.Family
-    
-    ///
     public var size: CGFloat
-    
-    ///
     public var weight: Font.Weight
-    
-    ///
     public var design: Font.Design
     
     ///

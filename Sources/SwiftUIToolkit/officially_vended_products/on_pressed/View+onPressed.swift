@@ -63,11 +63,11 @@ private struct CustomButtonStyle<
 }
 
 ///
-extension CustomButtonStyle {
+private extension CustomButtonStyle {
     
     ///
     @ViewBuilder
-    func makeBody (configuration: Configuration) -> some View {
+    func makeBody(configuration: Configuration) -> some View {
         modifyBaseView(
             baseView,
             configuration.isPressed

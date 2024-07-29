@@ -20,31 +20,31 @@ let package = Package(
         ///
         .package(
             url: "https://github.com/jeremyabannister/Color-from-hex",
-            "0.1.1" ..< "0.2.0"
+            "0.2.0" ..< "0.3.0"
         ),
         
         ///
         .package(
-            url: "https://github.com/jeremyabannister/EagerOrLazy-module",
+            url: "https://github.com/jeremyabannister/EagerOrLazy-package",
             "0.1.0" ..< "0.2.0"
         ),
         
         ///
         .package(
             url: "https://github.com/jeremyabannister/FoundationToolkit",
-            "0.7.9" ..< "0.8.0"
+            "0.8.0" ..< "0.9.0"
         ),
         
         ///
         .package(
-            url: "https://github.com/jeremyabannister/ScrollIfNecessary-module",
+            url: "https://github.com/jeremyabannister/ScrollIfNecessary-package",
             "0.1.0" ..< "0.2.0"
         ),
         
         ///
         .package(
             url: "https://github.com/jeremyabannister/View-bubblify",
-            "0.1.3" ..< "0.2.0"
+            "0.1.4" ..< "0.2.0"
         ),
     ],
     targets: [
@@ -52,9 +52,9 @@ let package = Package(
             name: "SwiftUIToolkit",
             dependencies: [
                 "Color-from-hex",
-                "EagerOrLazy-module",
+                .product(name: "EagerOrLazy-module", package: "EagerOrLazy-package"),
                 "FoundationToolkit",
-                "ScrollIfNecessary-module",
+                .product(name: "ScrollIfNecessary-module", package: "ScrollIfNecessary-package"),
                 "View-bubblify",
             ]
         ),

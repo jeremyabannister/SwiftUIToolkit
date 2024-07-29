@@ -6,12 +6,12 @@
 //
 
 ///
-public struct TextStyle: ProperValueType {
+public struct TextStyle:
+    ValueType,
+    Codable {
     
     ///
     public var font: FontDescription
-    
-    ///
     public var color: Color?
     
     ///
