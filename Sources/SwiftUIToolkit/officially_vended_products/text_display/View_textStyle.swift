@@ -12,6 +12,7 @@ extension View {
     public func textStyle(_ textStyle: TextStyle) -> some View {
         self
             .font(textStyle.font.asFont)
-            .foregroundColor(textStyle.color)
+            .foregroundStyle(textStyle.foregroundStyle)
+            .asAnyView()
     }
 }

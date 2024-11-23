@@ -1,30 +1,27 @@
 //
-//  TextStyle.swift
-//  
+//  TextStyle+SchemeColor.swift
+//  SwiftUIToolkit
 //
-//  Created by Jeremy Bannister on 12/27/21.
+//  Created by Jeremy Bannister on 11/23/24.
 //
 
-public struct TextStyle: Sendable, ExpressionErgonomic {
-    
-    public var font: FontDescription
-    public var foregroundStyle: (any ShapeStyle & Sendable)
+extension TextStyle {
     
     public init(
         font: FontDescription,
-        foregroundStyle: (any ShapeStyle & Sendable)
+        color: SchemeColor? = nil
     ) {
-        self.font = font
-        self.foregroundStyle = foregroundStyle
+        self.init(
+            font: font,
+            foregroundStyle: color ?? HierarchicalShapeStyle.primary
+        )
     }
-}
-
-extension TextStyle {
+    
     public static func rounded(
         family: Font.Family = .system,
         size: CGFloat,
         weight: Font.Weight = .regular,
-        foregroundStyle: (any ShapeStyle & Sendable)
+        color: SchemeColor? = nil
     ) -> Self {
         
         .init(
@@ -35,7 +32,7 @@ extension TextStyle {
                     weight: weight,
                     design: .rounded
                 ),
-            foregroundStyle: foregroundStyle
+            color: color
         )
     }
     
@@ -43,7 +40,7 @@ extension TextStyle {
         family: Font.Family = .system,
         size: CGFloat,
         design: Font.Design = .default,
-        foregroundStyle: (any ShapeStyle & Sendable)
+        color: SchemeColor? = nil
     ) -> Self {
         
         .init(
@@ -54,19 +51,19 @@ extension TextStyle {
                     weight: .semibold,
                     design: design
                 ),
-            foregroundStyle: foregroundStyle
+            color: color
         )
     }
     
     public static func roundedBold(
         size: CGFloat,
-        foregroundStyle: (any ShapeStyle & Sendable)
+        color: SchemeColor? = nil
     ) -> Self {
         
         .bold(
             size: size,
             design: .rounded,
-            foregroundStyle: foregroundStyle
+            color: color
         )
     }
     
@@ -74,7 +71,7 @@ extension TextStyle {
         size: CGFloat,
         weight: Font.Weight = .regular,
         design: Font.Design = .default,
-        foregroundStyle: (any ShapeStyle & Sendable)
+        color: SchemeColor? = nil
     ) -> Self {
         
         .init(
@@ -84,16 +81,7 @@ extension TextStyle {
                     weight: weight,
                     design: design
                 ),
-            foregroundStyle: foregroundStyle
-        )
-    }
-}
-
-extension TextStyle {
-    public init() {
-        self.init(
-            font: .init(),
-            foregroundStyle: .primary
+            color: color
         )
     }
 }

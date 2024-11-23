@@ -8,9 +8,7 @@
 // MARK: - Head -
 
 ///
-public struct MultilineTextStyle:
-    ValueType,
-    Codable {
+public struct MultilineTextStyle: ExpressionErgonomic & Sendable {
     
     ///
     public var textStyle: TextStyle
