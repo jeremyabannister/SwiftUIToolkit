@@ -6,7 +6,6 @@
 //
 
 ///
-@available(iOS 13.0, macOS 11.0, *)
 extension SFSymbol {
     
     ///
@@ -26,7 +25,6 @@ extension SFSymbol {
 }
 
 ///
-@available(iOS 13.0, macOS 11.0, *)
 extension SFSymbol.Identifier {
     
     ///
@@ -41,7 +39,6 @@ extension SFSymbol.Identifier {
 }
 
 ///
-@available(iOS 13.0, macOS 11.0, *)
 extension SFSymbol.Identifier {
     
     ///
@@ -96,7 +93,6 @@ extension SFSymbol.Identifier {
 }
 
 ///
-@available(iOS 13.0, macOS 11.0, *)
 extension SFSymbol.Identifier {
     
     ///
@@ -106,7 +102,6 @@ extension SFSymbol.Identifier {
 }
 
 ///
-@available(iOS 13.0, macOS 11.0, *)
 extension SFSymbol.Identifier {
     
     ///

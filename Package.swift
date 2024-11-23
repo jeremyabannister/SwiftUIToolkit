@@ -7,7 +7,7 @@ import PackageDescription
 ///
 let package = Package(
     name: "SwiftUIToolkit",
-    platforms: [.macOS(.v10_15), .iOS(.v13), .watchOS(.v7), .tvOS(.v13)],
+    platforms: [.macOS(.v12), .iOS(.v15), .watchOS(.v8), .tvOS(.v15)],
     products: [
         
         ///
@@ -33,7 +33,7 @@ let package = Package(
         ///
         .package(
             url: "https://github.com/jeremyabannister/FoundationToolkit",
-            "0.8.0" ..< "0.9.0"
+            .upToNextMinor(from: "0.8.4")
         ),
         
         ///

@@ -6,7 +6,6 @@
 //
 
 ///
-@available(iOS 14.0, macOS 11.0, *)
 public enum StackDescription:
     Equatable,
     ExpressionErgonomic {
@@ -32,7 +31,6 @@ public enum StackDescription:
 }
 
 ///
-@available(macOS 11.0, iOS 14.0, watchOS 7, tvOS 14, *)
 extension StackDescription {
     
     ///
@@ -91,7 +89,6 @@ extension StackDescription {
 }
 
 ///
-@available(iOS 14.0, macOS 11.0, *)
 extension StackDescription {
     
     ///

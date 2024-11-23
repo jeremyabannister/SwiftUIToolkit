@@ -9,7 +9,6 @@
 extension Axis: ExpressionErgonomic { }
 
 ///
-@available(iOS 14.0, macOS 11.0, *)
 extension Axis {
     
     ///

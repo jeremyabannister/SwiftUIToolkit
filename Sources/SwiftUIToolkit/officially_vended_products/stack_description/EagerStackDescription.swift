@@ -28,7 +28,6 @@ public enum EagerStackDescription: Equatable,
 }
 
 ///
-@available(iOS 14.0, macOS 11.0, *)
 extension EagerStackDescription {
     
     ///

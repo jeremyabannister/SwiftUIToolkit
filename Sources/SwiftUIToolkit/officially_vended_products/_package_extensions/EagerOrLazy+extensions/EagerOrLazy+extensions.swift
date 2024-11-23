@@ -6,7 +6,6 @@
 //
 
 ///
-@available(macOS 11.0, iOS 14.0, watchOS 7, tvOS 14, *)
 extension EagerOrLazy {
     
     ///

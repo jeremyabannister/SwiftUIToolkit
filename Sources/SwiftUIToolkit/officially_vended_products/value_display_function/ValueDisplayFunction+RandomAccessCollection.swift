@@ -8,7 +8,6 @@
 // MARK: - Post-macOS11-iOS14
 
 ///
-@available(iOS 14.0, macOS 11.0, tvOS 14, *)
 extension ValueDisplayFunction
     where Value: RandomAccessCollection & DisplayableValue,
           Value.Element: Identifiable {
@@ -42,7 +41,6 @@ extension ValueDisplayFunction
 }
 
 ///
-@available(iOS 14.0, macOS 11.0, tvOS 14, *)
 extension ValueDisplayFunction
     where Value: RandomAccessCollection & DisplayableValue {
     
@@ -77,7 +75,6 @@ extension ValueDisplayFunction
 }
 
 ///
-@available(iOS 14.0, macOS 11.0, tvOS 14, *)
 extension ValueDisplayFunction
     where Value: RandomAccessCollection & DisplayableValue,
           Value.Element: Identifiable {
@@ -148,7 +145,6 @@ extension ValueDisplayFunction
 }
 
 ///
-@available(iOS 14.0, macOS 11.0, tvOS 14, *)
 extension ValueDisplayFunction
     where Value: RandomAccessCollection & DisplayableValue,
           Value.Element: Identifiable {
@@ -231,7 +227,6 @@ extension ValueDisplayFunction
 }
 
 ///
-@available(iOS 14.0, macOS 11.0, tvOS 14, *)
 extension ValueDisplayFunction
     where Value: RandomAccessCollection & DisplayableValue {
     
@@ -317,7 +312,6 @@ extension ValueDisplayFunction
 }
 
 ///
-@available(iOS 14.0, macOS 11.0, tvOS 14, *)
 extension ValueDisplayFunction
     where Value: RandomAccessCollection & DisplayableValue {
     

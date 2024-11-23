@@ -25,7 +25,6 @@ extension Color {
 }
 
 ///
-@available(macOS 12, iOS 15.0, watchOS 8, tvOS 15, *)
 extension Color: Codable {
     
     ///
@@ -66,7 +65,6 @@ extension Color: Codable {
 
 #if canImport(UIKit)
 private typealias PlatformColor = UIColor
-@available(iOS 15, watchOS 8, tvOS 15, *)
 private extension Color {
     init(platformColor: PlatformColor) {
         self.init(uiColor: platformColor)
@@ -74,7 +72,6 @@ private extension Color {
 }
 #elseif canImport(Cocoa)
 private typealias PlatformColor = NSColor
-@available(macOS 12, *)
 private extension Color {
     init(platformColor: PlatformColor) {
         self.init(nsColor: platformColor)
