@@ -8,7 +8,8 @@
 ///
 public enum StackDescription:
     Equatable,
-    ExpressionErgonomic {
+    ExpressionErgonomic,
+    Sendable {
     
     ///
     case H(

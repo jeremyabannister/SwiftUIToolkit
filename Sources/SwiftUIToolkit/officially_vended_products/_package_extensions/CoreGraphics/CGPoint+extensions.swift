@@ -6,4 +6,4 @@
 //
 
 ///
-extension CGPoint: ExpressionErgonomic { }
+extension CGPoint: @retroactive ExpressionErgonomic { }

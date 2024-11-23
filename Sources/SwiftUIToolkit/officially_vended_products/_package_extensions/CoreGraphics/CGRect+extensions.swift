@@ -6,4 +6,4 @@
 //
 
 ///
-extension CGRect: ExpressionErgonomic { }
+extension CGRect: @retroactive ExpressionErgonomic { }

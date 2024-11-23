@@ -6,8 +6,10 @@
 //
 
 ///
-public enum EagerStackDescription: Equatable,
-                                   ExpressionErgonomic {
+public enum EagerStackDescription:
+    Equatable,
+    ExpressionErgonomic,
+    Sendable {
     
     ///
     case H(

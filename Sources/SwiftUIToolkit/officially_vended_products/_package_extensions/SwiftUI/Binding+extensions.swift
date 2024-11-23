@@ -6,10 +6,10 @@
 //
 
 ///
-extension Binding: ExpressionErgonomic { }
+extension Binding: @retroactive ExpressionErgonomic { }
 
 ///
-extension Binding {
+extension Binding where Value: Sendable {
     
     ///
     public func unwrapped<Wrapped>() -> Binding<Wrapped>?
@@ -32,7 +32,7 @@ extension Binding {
 }
 
 ///
-extension Binding {
+extension Binding where Value: Sendable {
     
     ///
     public func forceUnwrap<Wrapped>() -> Binding<Wrapped>
@@ -47,14 +47,12 @@ extension Binding {
 }
 
 ///
-extension Binding {
+extension Binding where Value: Sendable {
     
     ///
-    public func map<
-        NewValue
-    >(
-        forward forwardTransform: @escaping (Value)->NewValue,
-        reverse reverseTransform: @escaping (NewValue)->Value
+    public func map<NewValue>(
+        forward forwardTransform: @escaping @Sendable (Value)->NewValue,
+        reverse reverseTransform: @escaping @Sendable (NewValue)->Value
     ) -> Binding<NewValue> {
         
         ///

@@ -6,10 +6,10 @@
 //
 
 ///
-public struct ValueDisplayFunction <Value>: ExpressionErgonomic {
+public struct ValueDisplayFunction <Value>: ExpressionErgonomic, Sendable {
 
     ///
-    internal private(set) var body: (Value)->AnyView
+    internal private(set) var body: @Sendable (Value)->AnyView
     
     ///
     public func callAsFunction(_ value: Value) -> AnyView {
@@ -17,7 +17,7 @@ public struct ValueDisplayFunction <Value>: ExpressionErgonomic {
     }
     
     ///
-    public init<Body: View>(@ViewBuilder body: @escaping (Value)->Body) {
+    public init<Body: View>(@ViewBuilder body: @escaping @Sendable (Value)->Body) {
         self.body = { body($0).asAnyView() }
     }
 }

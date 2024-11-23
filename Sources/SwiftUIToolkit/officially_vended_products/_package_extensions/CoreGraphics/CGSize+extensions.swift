@@ -6,7 +6,7 @@
 //
 
 ///
-extension CGSize: ExpressionErgonomic { }
+extension CGSize: @retroactive ExpressionErgonomic { }
 
 ///
 extension CGSize {

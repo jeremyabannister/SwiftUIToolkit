@@ -1,5 +1,5 @@
 {
-  "originHash" : "30524e3cfb12281aca05aa14839f3d1b01e01aeed106a55df18af3b27cd4d0dd",
+  "originHash" : "460781296043d4be6e214ae496928eb186030be19c58f05890b4861f1715f844",
   "pins" : [
     {
       "identity" : "assertiontoolkit",
@@ -33,8 +33,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/jeremyabannister/Color-from-hex",
       "state" : {
-        "revision" : "fd9b45af3ee5182b0c063dc09853f5a2dddbc70e",
-        "version" : "0.2.0"
+        "revision" : "1e4eaf282e41cfedb0a7a4dadee60e6b57af5114",
+        "version" : "0.2.1"
       }
     },
     {
@@ -42,8 +42,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/jeremyabannister/ColorCode-RGBA-256-package",
       "state" : {
-        "revision" : "20307085dccc320a9df7cfc39a2d4733e7c684db",
-        "version" : "0.1.0"
+        "revision" : "4ada36fb784bbff6367403b66dd1bbbcc3c9a330",
+        "version" : "0.1.2"
       }
     },
     {
@@ -87,8 +87,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/jeremyabannister/EagerOrLazy-package",
       "state" : {
-        "revision" : "66a4446a0b462aa544dc09944d592588eaae66de",
-        "version" : "0.1.0"
+        "revision" : "5754c057ff8f8a71b3091c9a562652f2d6c1e9cb",
+        "version" : "0.1.1"
       }
     },
     {
@@ -168,8 +168,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/jeremyabannister/ScrollIfNecessary-package",
       "state" : {
-        "revision" : "be12c65797579e53612a2409248b34c8716a26bf",
-        "version" : "0.1.0"
+        "revision" : "34d42b188f40c2e04c00f7bfa8586be88b4cfbd3",
+        "version" : "0.1.1"
       }
     },
     {
@@ -186,8 +186,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/jeremyabannister/StandardHexadecimalColorCode-package",
       "state" : {
-        "revision" : "b187e5ae3a10229c0746f2663787046faf2da29e",
-        "version" : "0.1.0"
+        "revision" : "9cfc2491310a968f3232fb2533f456862fba7cb0",
+        "version" : "0.1.1"
       }
     },
     {
@@ -231,8 +231,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/jeremyabannister/View-bubblify",
       "state" : {
-        "revision" : "263e8f57f8dba4979f27f76e3e5656a1bf931c7f",
-        "version" : "0.1.4"
+        "revision" : "887797c2fef132bc72cee8939ee9a90bd6450915",
+        "version" : "0.1.5"
       }
     },
     {

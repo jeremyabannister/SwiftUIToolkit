@@ -25,11 +25,11 @@ public struct SchemeColor: ShapeStyle, View, ExpressionErgonomic, Sendable {
         self.color(for: colorScheme)
     }
     
-    public func resolve(in environment: EnvironmentValues) -> Color {
+    public nonisolated func resolve(in environment: EnvironmentValues) -> Color {
         color(for: environment.colorScheme)
     }
     
-    private func color(for colorScheme: ColorScheme) -> Color {
+    private nonisolated func color(for colorScheme: ColorScheme) -> Color {
         switch colorScheme {
         case .light: lightMode
         case .dark: darkMode

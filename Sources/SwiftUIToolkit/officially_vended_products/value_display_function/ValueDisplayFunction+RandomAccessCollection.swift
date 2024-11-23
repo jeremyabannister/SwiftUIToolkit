@@ -18,7 +18,7 @@ extension ValueDisplayFunction
     >(
         axis: Axis,
         showsIndicators: Bool = true,
-        elementDisplay: @escaping (Value.Element)->ElementDisplay
+        elementDisplay: @escaping @Sendable (Value.Element)->ElementDisplay
     ) -> Self {
         
         ///
@@ -51,8 +51,8 @@ extension ValueDisplayFunction
     >(
         axis: Axis,
         showsIndicators: Bool = true,
-        id idKeyPath: KeyPath<Value.Element, ID>,
-        elementDisplay: @escaping (Value.Element)->ElementDisplay
+        id idKeyPath: KeyPath<Value.Element, ID> & Sendable,
+        elementDisplay: @escaping @Sendable (Value.Element)->ElementDisplay
     ) -> Self {
         
         ///
@@ -156,7 +156,7 @@ extension ValueDisplayFunction
         _ eagerOrLazy: EagerOrLazy = .eager,
         alignment: VerticalAlignment = .center,
         spacing: CGFloat? = nil,
-        elementDisplay: @escaping (Value.Element)->ElementDisplay
+        elementDisplay: @escaping @Sendable (Value.Element)->ElementDisplay
     ) -> Self {
         
         ///
@@ -176,7 +176,7 @@ extension ValueDisplayFunction
         _ eagerOrLazy: EagerOrLazy = .eager,
         alignment: HorizontalAlignment = .center,
         spacing: CGFloat? = nil,
-        elementDisplay: @escaping (Value.Element)->ElementDisplay
+        elementDisplay: @escaping @Sendable (Value.Element)->ElementDisplay
     ) -> Self {
         
         ///
@@ -196,7 +196,7 @@ extension ValueDisplayFunction
         _ eagerOrLazy: EagerOrLazy = .eager,
         alignment: Alignment = .center,
         spacing: CGFloat? = nil,
-        elementDisplay: @escaping (Value.Element)->ElementDisplay
+        elementDisplay: @escaping @Sendable (Value.Element)->ElementDisplay
     ) -> Self {
         
         ///
@@ -214,7 +214,7 @@ extension ValueDisplayFunction
         ElementDisplay: View
     >(
         _ description: StackDescription,
-        elementDisplay: @escaping (Value.Element)->ElementDisplay
+        elementDisplay: @escaping @Sendable (Value.Element)->ElementDisplay
     ) -> Self {
         
         ///
@@ -237,7 +237,7 @@ extension ValueDisplayFunction
         _ eagerOrLazy: EagerOrLazy = .eager,
         alignment: VerticalAlignment = .center,
         spacing: CGFloat? = nil,
-        id idKeyPath: KeyPath<Value.Element, ID>,
+        id idKeyPath: KeyPath<Value.Element, ID> & Sendable,
         elementDisplay: ValueDisplayFunction<Value.Element>
     ) -> Self {
         
@@ -258,7 +258,7 @@ extension ValueDisplayFunction
         _ eagerOrLazy: EagerOrLazy = .eager,
         alignment: HorizontalAlignment = .center,
         spacing: CGFloat? = nil,
-        id idKeyPath: KeyPath<Value.Element, ID>,
+        id idKeyPath: KeyPath<Value.Element, ID> & Sendable,
         elementDisplay: ValueDisplayFunction<Value.Element>
     ) -> Self {
         
@@ -279,7 +279,7 @@ extension ValueDisplayFunction
         _ eagerOrLazy: EagerOrLazy = .eager,
         alignment: Alignment = .center,
         spacing: CGFloat? = nil,
-        id idKeyPath: KeyPath<Value.Element, ID>,
+        id idKeyPath: KeyPath<Value.Element, ID> & Sendable,
         elementDisplay: ValueDisplayFunction<Value.Element>
     ) -> Self {
         
@@ -298,7 +298,7 @@ extension ValueDisplayFunction
         ID: Hashable
     >(
         _ description: StackDescription,
-        id idKeyPath: KeyPath<Value.Element, ID>,
+        id idKeyPath: KeyPath<Value.Element, ID> & Sendable,
         elementDisplay: ValueDisplayFunction<Value.Element>
     ) -> Self {
         
@@ -323,8 +323,8 @@ extension ValueDisplayFunction
         _ eagerOrLazy: EagerOrLazy = .eager,
         alignment: VerticalAlignment = .center,
         spacing: CGFloat? = nil,
-        id idKeyPath: KeyPath<Value.Element, ID>,
-        elementDisplay: @escaping (Value.Element)->ElementDisplay
+        id idKeyPath: KeyPath<Value.Element, ID> & Sendable,
+        elementDisplay: @escaping @Sendable (Value.Element)->ElementDisplay
     ) -> Self {
         
         ///
@@ -347,8 +347,8 @@ extension ValueDisplayFunction
         _ eagerOrLazy: EagerOrLazy = .eager,
         alignment: HorizontalAlignment = .center,
         spacing: CGFloat? = nil,
-        id idKeyPath: KeyPath<Value.Element, ID>,
-        @ViewBuilder elementDisplay: @escaping (Value.Element)->ElementDisplay
+        id idKeyPath: KeyPath<Value.Element, ID> & Sendable,
+        @ViewBuilder elementDisplay: @escaping @Sendable (Value.Element)->ElementDisplay
     ) -> Self {
         
         ///
@@ -371,8 +371,8 @@ extension ValueDisplayFunction
         _ eagerOrLazy: EagerOrLazy = .eager,
         alignment: Alignment = .center,
         spacing: CGFloat? = nil,
-        id idKeyPath: KeyPath<Value.Element, ID>,
-        elementDisplay: @escaping (Value.Element)->ElementDisplay
+        id idKeyPath: KeyPath<Value.Element, ID> & Sendable,
+        elementDisplay: @escaping @Sendable (Value.Element)->ElementDisplay
     ) -> Self {
         
         ///
@@ -389,8 +389,8 @@ extension ValueDisplayFunction
         ElementDisplay: View
     >(
         _ description: StackDescription,
-        id idKeyPath: KeyPath<Value.Element, ID>,
-        elementDisplay: @escaping (Value.Element)->ElementDisplay
+        id idKeyPath: KeyPath<Value.Element, ID> & Sendable,
+        elementDisplay: @escaping @Sendable (Value.Element)->ElementDisplay
     ) -> Self {
         
         ///
@@ -483,7 +483,7 @@ extension ValueDisplayFunction
     >(
         alignment: VerticalAlignment = .center,
         spacing: CGFloat? = nil,
-        elementDisplay: @escaping (Value.Element)->ElementDisplay
+        elementDisplay: @escaping @Sendable (Value.Element)->ElementDisplay
     ) -> Self {
         
         ///
@@ -501,7 +501,7 @@ extension ValueDisplayFunction
     >(
         alignment: HorizontalAlignment = .center,
         spacing: CGFloat? = nil,
-        elementDisplay: @escaping (Value.Element)->ElementDisplay
+        elementDisplay: @escaping @Sendable (Value.Element)->ElementDisplay
     ) -> Self {
         
         ///
@@ -519,7 +519,7 @@ extension ValueDisplayFunction
     >(
         alignment: Alignment = .center,
         spacing: CGFloat? = nil,
-        elementDisplay: @escaping (Value.Element)->ElementDisplay
+        elementDisplay: @escaping @Sendable (Value.Element)->ElementDisplay
     ) -> Self {
         
         ///
@@ -535,7 +535,7 @@ extension ValueDisplayFunction
     public static func forEach<
         ElementDisplay: View
     >(
-        elementDisplay: @escaping (Value.Element)->ElementDisplay
+        elementDisplay: @escaping @Sendable (Value.Element)->ElementDisplay
     ) -> Self {
         
         ///
@@ -556,7 +556,7 @@ extension ValueDisplayFunction
     >(
         alignment: VerticalAlignment = .center,
         spacing: CGFloat? = nil,
-        id idKeyPath: KeyPath<Value.Element, ID>,
+        id idKeyPath: KeyPath<Value.Element, ID> & Sendable,
         elementDisplay: ValueDisplayFunction<Value.Element>
     ) -> Self {
         
@@ -575,7 +575,7 @@ extension ValueDisplayFunction
     >(
         alignment: HorizontalAlignment = .center,
         spacing: CGFloat? = nil,
-        id idKeyPath: KeyPath<Value.Element, ID>,
+        id idKeyPath: KeyPath<Value.Element, ID> & Sendable,
         elementDisplay: ValueDisplayFunction<Value.Element>
     ) -> Self {
         
@@ -594,7 +594,7 @@ extension ValueDisplayFunction
     >(
         alignment: Alignment = .center,
         spacing: CGFloat? = nil,
-        id idKeyPath: KeyPath<Value.Element, ID>,
+        id idKeyPath: KeyPath<Value.Element, ID> & Sendable,
         elementDisplay: ValueDisplayFunction<Value.Element>
     ) -> Self {
         
@@ -611,7 +611,7 @@ extension ValueDisplayFunction
     public static func forEach<
         ID: Hashable
     >(
-        id idKeyPath: KeyPath<Value.Element, ID>,
+        id idKeyPath: KeyPath<Value.Element, ID> & Sendable,
         elementDisplay: ValueDisplayFunction<Value.Element>
     ) -> Self {
         
@@ -634,8 +634,8 @@ extension ValueDisplayFunction
     >(
         alignment: VerticalAlignment = .center,
         spacing: CGFloat? = nil,
-        id idKeyPath: KeyPath<Value.Element, ID>,
-        elementDisplay: @escaping (Value.Element)->ElementDisplay
+        id idKeyPath: KeyPath<Value.Element, ID> & Sendable,
+        elementDisplay: @escaping @Sendable (Value.Element)->ElementDisplay
     ) -> Self {
         
         ///
@@ -656,8 +656,8 @@ extension ValueDisplayFunction
     >(
         alignment: HorizontalAlignment = .center,
         spacing: CGFloat? = nil,
-        id idKeyPath: KeyPath<Value.Element, ID>,
-        elementDisplay: @escaping (Value.Element)->ElementDisplay
+        id idKeyPath: KeyPath<Value.Element, ID> & Sendable,
+        elementDisplay: @escaping @Sendable (Value.Element)->ElementDisplay
     ) -> Self {
         
         ///
@@ -678,8 +678,8 @@ extension ValueDisplayFunction
     >(
         alignment: Alignment = .center,
         spacing: CGFloat? = nil,
-        id idKeyPath: KeyPath<Value.Element, ID>,
-        elementDisplay: @escaping (Value.Element)->ElementDisplay
+        id idKeyPath: KeyPath<Value.Element, ID> & Sendable,
+        elementDisplay: @escaping @Sendable (Value.Element)->ElementDisplay
     ) -> Self {
         
         ///
@@ -696,8 +696,8 @@ extension ValueDisplayFunction
         ElementDisplay: View
     >(
         _ description: EagerStackDescription,
-        id idKeyPath: KeyPath<Value.Element, ID>,
-        elementDisplay: @escaping (Value.Element)->ElementDisplay
+        id idKeyPath: KeyPath<Value.Element, ID> & Sendable,
+        elementDisplay: @escaping @Sendable (Value.Element)->ElementDisplay
     ) -> Self {
         
         ///
@@ -713,8 +713,8 @@ extension ValueDisplayFunction
         ID: Hashable,
         ElementDisplay: View
     >(
-        id idKeyPath: KeyPath<Value.Element, ID>,
-        elementDisplay: @escaping (Value.Element)->ElementDisplay
+        id idKeyPath: KeyPath<Value.Element, ID> & Sendable,
+        elementDisplay: @escaping @Sendable (Value.Element)->ElementDisplay
     ) -> Self {
         
         ///

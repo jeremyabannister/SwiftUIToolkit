@@ -9,6 +9,7 @@
 extension String {
     
     ///
+    @MainActor
     public func displayed(_ textStyle: TextStyle) -> some View {
         Text(self)
             .textStyle(textStyle)

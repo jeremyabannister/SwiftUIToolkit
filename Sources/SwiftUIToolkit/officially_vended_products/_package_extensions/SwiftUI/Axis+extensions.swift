@@ -6,7 +6,7 @@
 //
 
 ///
-extension Axis: ExpressionErgonomic { }
+extension Axis: @retroactive ExpressionErgonomic { }
 
 ///
 extension Axis {

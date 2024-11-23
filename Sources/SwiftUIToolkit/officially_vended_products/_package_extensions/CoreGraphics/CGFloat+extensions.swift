@@ -6,7 +6,7 @@
 //
 
 ///
-extension CGFloat: ExpressionErgonomic { }
+extension CGFloat: @retroactive ExpressionErgonomic { }
 
 ///
 extension CGFloat {

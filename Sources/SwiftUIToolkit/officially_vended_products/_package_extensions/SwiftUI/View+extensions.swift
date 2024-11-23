@@ -85,7 +85,7 @@ extension View {
 extension View {
     
     ///
-    public func asAnyView() -> AnyView {
+    public nonisolated func asAnyView() -> AnyView {
         AnyView(self)
     }
 }
